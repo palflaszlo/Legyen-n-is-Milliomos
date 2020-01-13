@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legyen ön is Milliomos", "Legyen ön is Milliomos\Legyen ön is Milliomos.csproj", "{FD8B1016-826F-4658-9939-3417483AC954}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD8B1016-826F-4658-9939-3417483AC954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8B1016-826F-4658-9939-3417483AC954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8B1016-826F-4658-9939-3417483AC954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8B1016-826F-4658-9939-3417483AC954}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FFDEA70-A9DA-433A-A79A-8BAE8BC3C129}
+	EndGlobalSection
+EndGlobal
