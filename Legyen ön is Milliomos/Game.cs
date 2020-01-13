@@ -35,6 +35,7 @@ namespace Legyen_ön_is_Milliomos
         private void secondAnswear_Click(object sender, EventArgs e)
         {
             //JatekKerdes helyesE = new JatekKerdes();
+
         }
     }
 }
