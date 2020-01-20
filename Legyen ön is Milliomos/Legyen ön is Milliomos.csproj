@@ -77,9 +77,7 @@
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="JatekKerdes.cs" />
     <Compile Include="JatekKerdesek.cs" />
-    <Compile Include="Kerdes.cs" />
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>

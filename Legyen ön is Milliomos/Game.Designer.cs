@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Question = new System.Windows.Forms.Label();
             this.firstAnswer = new System.Windows.Forms.Label();
             this.thirdAnswear = new System.Windows.Forms.Label();
@@ -44,39 +45,46 @@
             // 
             // Question
             // 
+            this.Question.AutoEllipsis = true;
             this.Question.AutoSize = true;
             this.Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Question.Location = new System.Drawing.Point(180, 238);
+            this.Question.Location = new System.Drawing.Point(12, 285);
             this.Question.Name = "Question";
-            this.Question.Size = new System.Drawing.Size(252, 37);
+            this.Question.Size = new System.Drawing.Size(253, 44);
             this.Question.TabIndex = 1;
             this.Question.Text = "Ide jön  a kérdés";
+            this.Question.UseCompatibleTextRendering = true;
             // 
             // firstAnswer
             // 
+            this.firstAnswer.AutoEllipsis = true;
             this.firstAnswer.AutoSize = true;
             this.firstAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.firstAnswer.Location = new System.Drawing.Point(58, 322);
+            this.firstAnswer.Location = new System.Drawing.Point(12, 394);
             this.firstAnswer.Name = "firstAnswer";
             this.firstAnswer.Size = new System.Drawing.Size(122, 25);
             this.firstAnswer.TabIndex = 2;
             this.firstAnswer.Text = "Első válasz";
+            this.firstAnswer.Click += new System.EventHandler(this.firstAnswer_Click);
             // 
             // thirdAnswear
             // 
+            this.thirdAnswear.AutoEllipsis = true;
             this.thirdAnswear.AutoSize = true;
             this.thirdAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.thirdAnswear.Location = new System.Drawing.Point(71, 394);
+            this.thirdAnswear.Location = new System.Drawing.Point(12, 466);
             this.thirdAnswear.Name = "thirdAnswear";
             this.thirdAnswear.Size = new System.Drawing.Size(171, 25);
             this.thirdAnswear.TabIndex = 3;
             this.thirdAnswear.Text = "Harmadik válasz";
+            this.thirdAnswear.Click += new System.EventHandler(this.thirdAnswear_Click);
             // 
             // secondAnswear
             // 
+            this.secondAnswear.AutoEllipsis = true;
             this.secondAnswear.AutoSize = true;
             this.secondAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.secondAnswear.Location = new System.Drawing.Point(318, 322);
+            this.secondAnswear.Location = new System.Drawing.Point(349, 394);
             this.secondAnswear.Name = "secondAnswear";
             this.secondAnswear.Size = new System.Drawing.Size(161, 25);
             this.secondAnswear.TabIndex = 4;
@@ -85,26 +93,30 @@
             // 
             // forthAnswear
             // 
+            this.forthAnswear.AutoEllipsis = true;
             this.forthAnswear.AutoSize = true;
             this.forthAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.forthAnswear.Location = new System.Drawing.Point(379, 394);
+            this.forthAnswear.Location = new System.Drawing.Point(349, 466);
             this.forthAnswear.Name = "forthAnswear";
             this.forthAnswear.Size = new System.Drawing.Size(170, 25);
             this.forthAnswear.TabIndex = 5;
             this.forthAnswear.Text = "Negyedik válasz";
+            this.forthAnswear.Click += new System.EventHandler(this.forthAnswear_Click);
             // 
             // lbLevels
             // 
+            this.lbLevels.BackColor = System.Drawing.Color.White;
             this.lbLevels.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lbLevels.FormattingEnabled = true;
             this.lbLevels.ItemHeight = 18;
-            this.lbLevels.Location = new System.Drawing.Point(638, 126);
+            this.lbLevels.Location = new System.Drawing.Point(648, 212);
             this.lbLevels.Name = "lbLevels";
             this.lbLevels.Size = new System.Drawing.Size(140, 310);
             this.lbLevels.TabIndex = 6;
             // 
             // gbHelps
             // 
+            this.gbHelps.BackColor = System.Drawing.Color.Transparent;
             this.gbHelps.Controls.Add(this.button3);
             this.gbHelps.Controls.Add(this.button2);
             this.gbHelps.Controls.Add(this.button1);
@@ -156,7 +168,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(800, 534);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.gbHelps);
             this.Controls.Add(this.lbLevels);
@@ -165,6 +178,7 @@
             this.Controls.Add(this.thirdAnswear);
             this.Controls.Add(this.firstAnswer);
             this.Controls.Add(this.Question);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Game";
             this.gbHelps.ResumeLayout(false);

@@ -4,113 +4,113 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Legyen_ön_is_Milliomos
 {
     class JatekKerdesek
     {
-        private List<JatekKerdes>[] jatekKerdesLista;
-        public JatekKerdesek(string fajl)
+        public Random r = new Random();
+        string[] osszSor = File.ReadAllLines("kerdes.txt", Encoding.UTF8);
+        public int[] nehezsegek = new int[5000];
+        public string[] kerdesek = new string[5000];
+        public string[] valaszokA = new string[5000];
+        public string[] valaszokB = new string[5000];
+        public string[] valaszokC = new string[5000];
+        public string[] valaszokD = new string[5000];
+        public string[] kategoriak = new string[5000];
+        public string[] helyesValaszok = new string[5000];
+
+
+        public JatekKerdesek()
         {
-            this.jatekKerdesLista = new List<JatekKerdes>[15];
-            for (int i = 0; i < this.jatekKerdesLista.Length; i++)
+            for (int i = 0; i < osszSor.Length; i++)
             {
-                this.jatekKerdesLista[i] = new List<JatekKerdes>();
-            }
-            StreamReader sr = new StreamReader(fajl, Encoding.UTF8);
-            while (!sr.EndOfStream)
-            {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                this.jatekKerdesLista[nehezseg - 1].Add(jk);
+                string[] adatok = osszSor[i].Split(';');
+                nehezsegek[i] = Convert.ToInt32(adatok[0]);
+                kerdesek[i] = adatok[1];
+                valaszokA[i] = adatok[2];
+                valaszokB[i] = adatok[3];
+                valaszokC[i] = adatok[4];
+                valaszokD[i] = adatok[5];
+                helyesValaszok[i] = adatok[6];
+                kategoriak[i] = adatok[7];
             }
         }
 
-        public string getKerdes()
+        public int getSor(int szint, int random)
         {
-            string kerdes = "";
-            StreamReader sr = new StreamReader("kerdes.txt", Encoding.UTF8);
-            while (!sr.EndOfStream)
+            int sor = 0;
+            if (szint > 0 && szint < 8)
             {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                kerdes = adatok[1];
-                return kerdes;
+                sor = random;
             }
+            else if (szint > 7 && szint < 16)
+            {
+                sor = random;
+            }
+            else
+            {
+                string message = "You won the whole game!";
+                string caption = "You are a millionare!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Closes the parent form.
+                    Game.ActiveForm.Close();
+                }
+            }
+
+            return sor;
+        }
+        
+        public string getKerdes(int sor, int szint)
+        {
+            string kerdes = "Nincs semmi";
+            int j = sor;
+            kerdes = kerdesek[j];
             return kerdes;
         }
 
-        public string getValaszA()
+        public string getValaszA(int sor, int szint)
         {
-            string valaszA = "";
-            StreamReader sr = new StreamReader("kerdes.txt", Encoding.UTF8);
-            while (!sr.EndOfStream)
-            {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                valaszA = adatok[2];
-                return valaszA;
-            }
+            string valaszA = "Nincs semmi";
+            int j = sor;
+            valaszA = valaszokA[j];
             return valaszA;
         }
-        public string getValaszB()
+        public string getValaszB(int sor, int szint)
         {
-            string valaszB = "";
-            StreamReader sr = new StreamReader("kerdes.txt", Encoding.UTF8);
-            while (!sr.EndOfStream)
-            {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                valaszB = adatok[3];
-                return valaszB;
-            }
+            string valaszB = "Nincs semmi";
+            int j = sor;
+            valaszB = valaszokB[j];
             return valaszB;
         }
-        public string getValaszC()
+        public string getValaszC(int sor, int szint)
         {
-            string valaszC = "";
-            StreamReader sr = new StreamReader("kerdes.txt", Encoding.UTF8);
-            while (!sr.EndOfStream)
-            {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                valaszC = adatok[4];
-                return valaszC;
-            }
+            string valaszC = "Nincs semmi";
+            int j = sor;
+            valaszC = valaszokC[j];
             return valaszC;
         }
-        public string getValaszD()
+        public string getValaszD(int sor, int szint)
         {
-            string valaszD = "";
-            StreamReader sr = new StreamReader("kerdes.txt", Encoding.UTF8);
-            while (!sr.EndOfStream)
-            {
-                string sor = sr.ReadLine();
-                string[] adatok = sor.Split(';');
-                int nehezseg = Convert.ToInt32(adatok[0]);
-                JatekKerdes jk = new JatekKerdes(adatok[1], adatok[2], adatok[3], adatok[4], adatok[5], adatok[6], adatok[7]);
-                valaszD = adatok[5];
-                return valaszD;
-            }
+            string valaszD = "Nincs semmi";
+            int j = sor;
+            valaszD = valaszokD[j];
             return valaszD;
         }
-
-        public void ListaHossz()
+        
+        public string helyesBetu(int sor)
         {
-            for (int i = 0; i < this.jatekKerdesLista.Length; i++)
-            {
-                Console.WriteLine(this.jatekKerdesLista[i].Count);
-            }
+            string valasz = "";
+            int j = sor;
+            valasz = helyesValaszok[j];
+            return valasz;
         }
     }
 }

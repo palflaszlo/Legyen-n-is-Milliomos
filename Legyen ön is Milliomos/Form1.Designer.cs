@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(foAblak));
             this.btmStart = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -39,17 +40,18 @@
             // 
             // btmStart
             // 
-            this.btmStart.Location = new System.Drawing.Point(325, 336);
+            this.btmStart.BackColor = System.Drawing.SystemColors.Control;
+            this.btmStart.Location = new System.Drawing.Point(325, 420);
             this.btmStart.Name = "btmStart";
             this.btmStart.Size = new System.Drawing.Size(150, 30);
             this.btmStart.TabIndex = 0;
             this.btmStart.Text = "Új játék";
-            this.btmStart.UseVisualStyleBackColor = true;
+            this.btmStart.UseVisualStyleBackColor = false;
             this.btmStart.Click += new System.EventHandler(this.btmStart_Click);
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(325, 372);
+            this.btnLoad.Location = new System.Drawing.Point(325, 456);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(150, 30);
             this.btnLoad.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Location = new System.Drawing.Point(718, 368);
+            this.btnHelp.Location = new System.Drawing.Point(718, 452);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(70, 70);
             this.btnHelp.TabIndex = 2;
@@ -79,7 +81,7 @@
             // 
             // btnProfile
             // 
-            this.btnProfile.Location = new System.Drawing.Point(325, 408);
+            this.btnProfile.Location = new System.Drawing.Point(325, 492);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(150, 30);
             this.btnProfile.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(12, 368);
+            this.btnExit.Location = new System.Drawing.Point(12, 452);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(70, 70);
             this.btnExit.TabIndex = 5;
@@ -112,7 +114,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(800, 534);
             this.Controls.Add(this.btnScore);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnProfile);
@@ -120,6 +123,7 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btmStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "foAblak";
             this.Text = "Legyen ön is Milliomos";
             this.ResumeLayout(false);
