@@ -35,7 +35,7 @@
             // 
             // listScore
             // 
-            this.listScore.Location = new System.Drawing.Point(221, 12);
+            this.listScore.Location = new System.Drawing.Point(256, 12);
             this.listScore.Name = "listScore";
             this.listScore.Size = new System.Drawing.Size(289, 426);
             this.listScore.TabIndex = 0;

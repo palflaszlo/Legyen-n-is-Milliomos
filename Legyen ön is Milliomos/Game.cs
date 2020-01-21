@@ -33,11 +33,44 @@ namespace Legyen_ön_is_Milliomos
         public void text()
         {
             N = jk.getSor(szintT, tomb[szintT]);
-            Question.Text = jk.getKerdes(N, szintT);
+            Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
             firstAnswer.Text = jk.getValaszA(N, szintT);
             secondAnswear.Text = jk.getValaszB(N, szintT);
             thirdAnswear.Text = jk.getValaszC(N, szintT);
             forthAnswear.Text = jk.getValaszD(N, szintT);
+            switch (szintT)
+            {
+                case 1: lvl1.BackColor = Color.Orange; break;
+                case 2: lvl2.BackColor = Color.Orange;
+                    lvl1.BackColor = Color.Green; break;
+                case 3: lvl3.BackColor = Color.Orange;
+                    lvl2.BackColor = Color.Green; break;
+                case 4: lvl4.BackColor = Color.Orange;
+                    lvl3.BackColor = Color.Green; break;
+                case 5: lvl5.BackColor = Color.Orange;
+                    lvl4.BackColor = Color.Green; break;
+                case 6: lvl6.BackColor = Color.Orange;
+                    lvl5.BackColor = Color.Green; break;
+                case 7: lvl7.BackColor = Color.Orange;
+                    lvl6.BackColor = Color.Green; break;
+                case 8: lvl8.BackColor = Color.Orange;
+                    lvl7.BackColor = Color.Green; break;
+                case 9: lvl9.BackColor = Color.Orange;
+                    lvl8.BackColor = Color.Green; break;
+                case 10: lvl10.BackColor = Color.Orange;
+                    lvl9.BackColor = Color.Green; break;
+                case 11: lvl11.BackColor = Color.Orange;
+                    lvl10.BackColor = Color.Green; break;
+                case 12: lvl12.BackColor = Color.Orange;
+                    lvl11.BackColor = Color.Green; break;
+                case 13: lvl13.BackColor = Color.Orange;
+                    lvl12.BackColor = Color.Green; break;
+                case 14: lvl14.BackColor = Color.Orange;
+                    lvl13.BackColor = Color.Green; break;
+                case 15: lvl15.BackColor = Color.Orange;
+                    lvl14.BackColor = Color.Green; break;
+                default: lvl15.BackColor = Color.Green; break;
+            }
         }
 
 
@@ -118,5 +151,6 @@ namespace Legyen_ön_is_Milliomos
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
     }
 }
