@@ -96,6 +96,10 @@ namespace Legyen_ön_is_Milliomos
             if (jk.helyesBetu(N).Equals(betu))
             {
                 szintT++;
+                firstAnswer.Visible = true;
+                secondAnswear.Visible = true;
+                forthAnswear.Visible = true;
+                thirdAnswear.Visible = true;
                 text();
             }
             else
@@ -110,6 +114,10 @@ namespace Legyen_ön_is_Milliomos
             if (jk.helyesBetu(N).Equals(betu))
             {
                 szintT++;
+                firstAnswer.Visible = true;
+                secondAnswear.Visible = true;
+                forthAnswear.Visible = true;
+                thirdAnswear.Visible = true;
                 text();
             }
             else
@@ -124,6 +132,10 @@ namespace Legyen_ön_is_Milliomos
             if (jk.helyesBetu(N).Equals(betu))
             {
                 szintT++;
+                firstAnswer.Visible = true;
+                secondAnswear.Visible = true;
+                forthAnswear.Visible = true;
+                thirdAnswear.Visible = true;
                 text();
             }
             else
@@ -138,6 +150,10 @@ namespace Legyen_ön_is_Milliomos
             if (jk.helyesBetu(N).Equals(betu))
             {
                 szintT++;
+                firstAnswer.Visible = true;
+                secondAnswear.Visible = true;
+                forthAnswear.Visible = true;
+                thirdAnswear.Visible = true;
                 text();
             }
             else
@@ -151,6 +167,49 @@ namespace Legyen_ön_is_Milliomos
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+     
+        private void felezo_Click_1(object sender, EventArgs e)
+        {
+            string helyesvalasz = jk.helyesBetu(N);
+            ellenor.Text = helyesvalasz;
+            int HV = 0;
+            switch (helyesvalasz)
+            {
+                case "A": HV = 0; break;
+                case "B": HV = 1; break;
+                case "C": HV = 2; break;
+                case "D": HV = 3; break;
+            }
+            int rand, rand2 = 0;
+            do
+            {
 
+                rand = r.Next(0, 4);
+                rand2 = r.Next(0, 4);
+
+            } while (rand == HV || rand2 == HV);
+            switch (rand)
+            {
+                case 0:
+                    firstAnswer.Visible = false; break;
+                case 1:
+                    secondAnswear.Visible = false; break;
+                case 2:
+                    thirdAnswear.Visible = false; break;
+                case 3:
+                    forthAnswear.Visible = false; break;
+            }
+            switch (rand2)
+            {
+                case 0:
+                    firstAnswer.Visible = false; break;
+                case 1:
+                    secondAnswear.Visible = false; break;
+                case 2:
+                    thirdAnswear.Visible = false; break;
+                case 3:
+                    forthAnswear.Visible = false; break;
+            }
+        }
     }
 }

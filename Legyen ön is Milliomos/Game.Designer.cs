@@ -35,7 +35,7 @@
             this.secondAnswear = new System.Windows.Forms.Label();
             this.forthAnswear = new System.Windows.Forms.Label();
             this.btnExitGame = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.felezo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.lvl12 = new System.Windows.Forms.Label();
@@ -53,18 +53,19 @@
             this.lvl13 = new System.Windows.Forms.Label();
             this.lvl14 = new System.Windows.Forms.Label();
             this.lvl15 = new System.Windows.Forms.Label();
+            this.ellenor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Question
             // 
+            this.Question.AllowDrop = true;
             this.Question.AutoEllipsis = true;
-            this.Question.AutoSize = true;
             this.Question.BackColor = System.Drawing.Color.Black;
             this.Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Question.ForeColor = System.Drawing.Color.White;
             this.Question.Location = new System.Drawing.Point(12, 285);
             this.Question.Name = "Question";
-            this.Question.Size = new System.Drawing.Size(253, 44);
+            this.Question.Size = new System.Drawing.Size(667, 108);
             this.Question.TabIndex = 1;
             this.Question.Text = "Ide jön  a kérdés";
             this.Question.UseCompatibleTextRendering = true;
@@ -72,13 +73,12 @@
             // firstAnswer
             // 
             this.firstAnswer.AutoEllipsis = true;
-            this.firstAnswer.AutoSize = true;
             this.firstAnswer.BackColor = System.Drawing.Color.Black;
             this.firstAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firstAnswer.ForeColor = System.Drawing.Color.White;
             this.firstAnswer.Location = new System.Drawing.Point(12, 394);
             this.firstAnswer.Name = "firstAnswer";
-            this.firstAnswer.Size = new System.Drawing.Size(122, 25);
+            this.firstAnswer.Size = new System.Drawing.Size(311, 65);
             this.firstAnswer.TabIndex = 2;
             this.firstAnswer.Text = "Első válasz";
             this.firstAnswer.Click += new System.EventHandler(this.firstAnswer_Click);
@@ -86,13 +86,12 @@
             // thirdAnswear
             // 
             this.thirdAnswear.AutoEllipsis = true;
-            this.thirdAnswear.AutoSize = true;
             this.thirdAnswear.BackColor = System.Drawing.Color.Black;
             this.thirdAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.thirdAnswear.ForeColor = System.Drawing.Color.White;
             this.thirdAnswear.Location = new System.Drawing.Point(12, 466);
             this.thirdAnswear.Name = "thirdAnswear";
-            this.thirdAnswear.Size = new System.Drawing.Size(171, 25);
+            this.thirdAnswear.Size = new System.Drawing.Size(311, 59);
             this.thirdAnswear.TabIndex = 3;
             this.thirdAnswear.Text = "Harmadik válasz";
             this.thirdAnswear.Click += new System.EventHandler(this.thirdAnswear_Click);
@@ -100,13 +99,12 @@
             // secondAnswear
             // 
             this.secondAnswear.AutoEllipsis = true;
-            this.secondAnswear.AutoSize = true;
             this.secondAnswear.BackColor = System.Drawing.Color.Black;
             this.secondAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondAnswear.ForeColor = System.Drawing.Color.White;
             this.secondAnswear.Location = new System.Drawing.Point(349, 394);
             this.secondAnswear.Name = "secondAnswear";
-            this.secondAnswear.Size = new System.Drawing.Size(161, 25);
+            this.secondAnswear.Size = new System.Drawing.Size(330, 65);
             this.secondAnswear.TabIndex = 4;
             this.secondAnswear.Text = "Második válasz";
             this.secondAnswear.Click += new System.EventHandler(this.secondAnswear_Click);
@@ -114,13 +112,12 @@
             // forthAnswear
             // 
             this.forthAnswear.AutoEllipsis = true;
-            this.forthAnswear.AutoSize = true;
             this.forthAnswear.BackColor = System.Drawing.Color.Black;
             this.forthAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.forthAnswear.ForeColor = System.Drawing.Color.White;
             this.forthAnswear.Location = new System.Drawing.Point(349, 466);
             this.forthAnswear.Name = "forthAnswear";
-            this.forthAnswear.Size = new System.Drawing.Size(170, 25);
+            this.forthAnswear.Size = new System.Drawing.Size(330, 59);
             this.forthAnswear.TabIndex = 5;
             this.forthAnswear.Text = "Negyedik válasz";
             this.forthAnswear.Click += new System.EventHandler(this.forthAnswear_Click);
@@ -135,14 +132,15 @@
             this.btnExitGame.UseVisualStyleBackColor = true;
             this.btnExitGame.Click += new System.EventHandler(this.btnExitGame_Click);
             // 
-            // button1
+            // felezo
             // 
-            this.button1.Location = new System.Drawing.Point(648, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.felezo.Location = new System.Drawing.Point(637, 12);
+            this.felezo.Name = "felezo";
+            this.felezo.Size = new System.Drawing.Size(54, 23);
+            this.felezo.TabIndex = 9;
+            this.felezo.Text = "felezés";
+            this.felezo.UseVisualStyleBackColor = true;
+            this.felezo.Click += new System.EventHandler(this.felezo_Click_1);
             // 
             // button2
             // 
@@ -327,6 +325,13 @@
             this.lvl15.TabIndex = 41;
             this.lvl15.Text = "15. 40 000 000 Ft";
             // 
+            // ellenor
+            // 
+            this.ellenor.Location = new System.Drawing.Point(52, 79);
+            this.ellenor.Name = "ellenor";
+            this.ellenor.Size = new System.Drawing.Size(100, 20);
+            this.ellenor.TabIndex = 42;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +339,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.ellenor);
             this.Controls.Add(this.lvl15);
             this.Controls.Add(this.lvl14);
             this.Controls.Add(this.lvl13);
@@ -351,7 +357,7 @@
             this.Controls.Add(this.lvl12);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.felezo);
             this.Controls.Add(this.btnExitGame);
             this.Controls.Add(this.forthAnswear);
             this.Controls.Add(this.secondAnswear);
@@ -374,7 +380,7 @@
         private System.Windows.Forms.Label secondAnswear;
         private System.Windows.Forms.Label forthAnswear;
         private System.Windows.Forms.Button btnExitGame;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button felezo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lvl12;
@@ -392,5 +398,6 @@
         private System.Windows.Forms.Label lvl13;
         private System.Windows.Forms.Label lvl14;
         private System.Windows.Forms.Label lvl15;
+        private System.Windows.Forms.TextBox ellenor;
     }
 }
