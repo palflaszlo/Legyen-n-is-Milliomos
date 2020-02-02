@@ -331,6 +331,7 @@
             this.ellenor.Name = "ellenor";
             this.ellenor.Size = new System.Drawing.Size(100, 20);
             this.ellenor.TabIndex = 42;
+            this.ellenor.Text = "00:00:00";
             // 
             // Game
             // 
@@ -367,6 +368,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Game";
+            this.Load += new System.EventHandler(this.Game_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
