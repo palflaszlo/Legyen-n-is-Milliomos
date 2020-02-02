@@ -54,6 +54,7 @@
             this.lvl14 = new System.Windows.Forms.Label();
             this.lvl15 = new System.Windows.Forms.Label();
             this.ellenor = new System.Windows.Forms.TextBox();
+            this.ellenor2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Question
@@ -333,6 +334,14 @@
             this.ellenor.TabIndex = 42;
             this.ellenor.Text = "00:00:00";
             // 
+            // ellenor2
+            // 
+            this.ellenor2.Location = new System.Drawing.Point(219, 79);
+            this.ellenor2.Name = "ellenor2";
+            this.ellenor2.Size = new System.Drawing.Size(100, 20);
+            this.ellenor2.TabIndex = 43;
+            this.ellenor2.Text = "00:00:00";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +349,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.ellenor2);
             this.Controls.Add(this.ellenor);
             this.Controls.Add(this.lvl15);
             this.Controls.Add(this.lvl14);
@@ -401,5 +411,6 @@
         private System.Windows.Forms.Label lvl14;
         private System.Windows.Forms.Label lvl15;
         private System.Windows.Forms.TextBox ellenor;
+        private System.Windows.Forms.TextBox ellenor2;
     }
 }

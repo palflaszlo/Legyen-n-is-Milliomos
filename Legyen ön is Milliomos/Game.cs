@@ -21,7 +21,8 @@ namespace Legyen_ön_is_Milliomos
         private string betu = "A";
         public int[] tomb = new int[5000];
         System.Timers.Timer t = new System.Timers.Timer();
-        int h, m, s;
+        System.Timers.Timer t2 = new System.Timers.Timer();
+        int h, m, s, h2, m2, s2;
 
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
@@ -47,6 +48,33 @@ namespace Legyen_ön_is_Milliomos
             if (osztando%5==0)
             {
                 getAnswear(betu);
+            }
+        }
+
+
+        private void OnTimeEvent2(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Invoke(new Action(() =>
+            {
+                s2 += 1;
+                if (s2 == 60)
+                {
+                    s2 = 0;
+                    m2 += 1;
+                }
+                if (m2 == 60)
+                {
+                    m2 = 0;
+                    h2 += 1;
+                }
+                //ide is jön egy zene
+                ellenor2.Text = string.Format("{0}:{1}:{2}", h2.ToString().PadLeft(2, '0'), m2.ToString().PadLeft(2, '0'), s2.ToString().PadLeft(2, '0'));
+            }));
+            string[] osztas = ellenor2.Text.Split(':');
+            int osztando = Convert.ToInt32(osztas[2]);
+            if (osztando % 5 == 0)
+            {
+                text();
             }
         }
 
@@ -88,6 +116,7 @@ namespace Legyen_ön_is_Milliomos
                 forthAnswear.Visible = true;
                 thirdAnswear.Visible = true;
                 t.Stop();
+                t2.Stop();
                 switch (szintT)
                 {
                     case 1: lvl1.BackColor = Color.Orange; break;
@@ -181,6 +210,8 @@ namespace Legyen_ön_is_Milliomos
         {           
             if (jk.helyesBetu(N).Equals(betu))
             {
+                t.Stop();
+                t2.Start();
                 szintT++;
                 switch (betu)
                 {
@@ -190,7 +221,8 @@ namespace Legyen_ön_is_Milliomos
                     case "D": forthAnswear.BackColor = Color.Green; break;
                 }
                 //ide még egy zene jön
-                text();
+                t2.Interval = 1000;
+                t2.Elapsed += OnTimeEvent2;
             }
             else
             {
