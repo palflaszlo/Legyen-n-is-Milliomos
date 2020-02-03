@@ -55,6 +55,7 @@
             this.lvl15 = new System.Windows.Forms.Label();
             this.ellenor = new System.Windows.Forms.TextBox();
             this.ellenor2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Question
@@ -344,6 +345,15 @@
             this.ellenor2.Text = "00:00:00";
             this.ellenor2.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(378, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Megállni";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +361,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ellenor2);
             this.Controls.Add(this.ellenor);
             this.Controls.Add(this.lvl15);
@@ -414,5 +425,6 @@
         private System.Windows.Forms.Label lvl15;
         private System.Windows.Forms.TextBox ellenor;
         private System.Windows.Forms.TextBox ellenor2;
+        private System.Windows.Forms.Button button1;
     }
 }
