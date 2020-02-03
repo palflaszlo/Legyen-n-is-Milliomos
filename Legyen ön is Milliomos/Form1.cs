@@ -53,7 +53,7 @@ namespace Legyen_ön_is_Milliomos
 
         private void btnScore_Click(object sender, EventArgs e)
         {
-            Score pontszam = new Score();
+            pontszam pontszam = new pontszam();
             this.Hide();
             pontszam.ShowDialog();
             this.Show();

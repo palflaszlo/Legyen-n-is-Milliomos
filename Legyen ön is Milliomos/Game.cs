@@ -24,6 +24,8 @@ namespace Legyen_ön_is_Milliomos
         System.Timers.Timer t2 = new System.Timers.Timer();
         int h, m, s, h2, m2, s2;
 
+        public int pontszam;
+
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
             Invoke(new Action(() =>
@@ -45,7 +47,7 @@ namespace Legyen_ön_is_Milliomos
             }));
             string[] osztas = ellenor.Text.Split(':');
             int osztando = Convert.ToInt32(osztas[2]);
-            if (osztando%5==0)
+            if (osztando%3==0)
             {
                 getAnswear(betu);
             }
@@ -72,7 +74,7 @@ namespace Legyen_ön_is_Milliomos
             }));
             string[] osztas = ellenor2.Text.Split(':');
             int osztando = Convert.ToInt32(osztas[2]);
-            if (osztando % 5 == 0)
+            if (osztando % 3 == 0)
             {
                 text();
             }
@@ -117,6 +119,7 @@ namespace Legyen_ön_is_Milliomos
                 thirdAnswear.Visible = true;
                 t.Stop();
                 t2.Stop();
+                pontszam++;
                 switch (szintT)
                 {
                     case 1: lvl1.BackColor = Color.Orange; break;

@@ -333,6 +333,7 @@
             this.ellenor.Size = new System.Drawing.Size(100, 20);
             this.ellenor.TabIndex = 42;
             this.ellenor.Text = "00:00:00";
+            this.ellenor.Visible = false;
             // 
             // ellenor2
             // 
@@ -341,6 +342,7 @@
             this.ellenor2.Size = new System.Drawing.Size(100, 20);
             this.ellenor2.TabIndex = 43;
             this.ellenor2.Text = "00:00:00";
+            this.ellenor2.Visible = false;
             // 
             // Game
             // 
