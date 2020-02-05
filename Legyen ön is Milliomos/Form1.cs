@@ -12,9 +12,20 @@ namespace Legyen_ön_is_Milliomos
 {
     public partial class foAblak : Form
     {
+        Settings options = new Settings();
         public foAblak()
         {
             InitializeComponent();
+            if (options.teljesAblak)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+            }
         }
 
         private void btnProfile_Click(object sender, EventArgs e)

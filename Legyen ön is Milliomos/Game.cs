@@ -16,6 +16,8 @@ namespace Legyen_ön_is_Milliomos
         //public Label kerdes;
         public Random r = new Random();
         JatekKerdesek jk = new JatekKerdesek();
+        Profile pf = new Profile();
+        Settings options = new Settings();
         private int szintT = 1;
         private int N = 1;
         private string betu = "A";
@@ -84,11 +86,45 @@ namespace Legyen_ön_is_Milliomos
         public Game()
         {
             InitializeComponent();
+            if (options.teljesAblak)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+            }
             for (int i = 0; i < 5000; i++)
             {
                 tomb[i] = r.Next(0, 4999);
             }
             text();
+            if (pf.helps.Contains<string>("Felező"))
+            {
+                felezo.Enabled = true;
+            }
+            else
+            {
+                felezo.Enabled = false;
+            }
+            if (pf.helps.Contains<string>("Közönség"))
+            {
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+            }
+            if (pf.helps.Contains<string>("Telefonos"))
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
         }
 
         public void text()
@@ -269,6 +305,52 @@ namespace Legyen_ön_is_Milliomos
             tt.Start();
         }
 
+        private void megallas_Click(object sender, EventArgs e)
+        {
+            if (firstAnswer.Focused)
+            {
+                betu = "A";
+                firstAnswer.BackColor = Color.Orange;
+            }
+            if (secondAnswear.Focused)
+            {
+                betu = "B";
+                secondAnswear.BackColor = Color.Orange;
+            }
+            if (thirdAnswear.Focused)
+            {
+                betu = "C";
+                thirdAnswear.BackColor = Color.Orange;
+            }
+            if (forthAnswear.Focused)
+            {
+                betu = "D";
+                forthAnswear.BackColor = Color.Orange;
+            }
+            string helyes = jk.helyesBetu(N);
+            switch (helyes)
+            {
+                case "A": firstAnswer.BackColor = Color.Green; break;
+                case "B": secondAnswear.BackColor = Color.Green; break;
+                case "C": thirdAnswear.BackColor = Color.Green; break;
+                case "D": forthAnswear.BackColor = Color.Green; break;
+            }
+            //ide még egy zene jön
+            string message = "You gave up this level. You won the {0}", szintT;
+            string caption = "Game over!";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                // Closes the parent form.
+                Application.DoEvents();
+                this.Close();
+            }
+        }
+
         private void thirdAnswear_Click(object sender, EventArgs e)
         {
             betu = "C";
@@ -339,6 +421,7 @@ namespace Legyen_ön_is_Milliomos
                 case 3:
                     forthAnswear.Visible = false; break;
             }
+            felezo.Enabled = false;
         }
     }
 }

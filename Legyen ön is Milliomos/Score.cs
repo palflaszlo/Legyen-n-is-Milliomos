@@ -13,9 +13,20 @@ namespace Legyen_ön_is_Milliomos
     public partial class pontszam : Form
     {
         Game jatek = new Game();
+        Settings options = new Settings();
         public pontszam()
         {
             InitializeComponent();
+            if (options.teljesAblak)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
