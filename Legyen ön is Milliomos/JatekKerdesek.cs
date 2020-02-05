@@ -12,6 +12,7 @@ namespace Legyen_ön_is_Milliomos
     {
         public Random r = new Random();
         string[] osszSor = File.ReadAllLines("kerdes.txt", Encoding.UTF8);
+        string[] temakorok = File.ReadAllLines("temak.txt", Encoding.UTF8);
         public int[] nehezsegek = new int[5000];
         public string[] kerdesek = new string[5000];
         public string[] valaszokA = new string[5000];
@@ -19,22 +20,78 @@ namespace Legyen_ön_is_Milliomos
         public string[] valaszokC = new string[5000];
         public string[] valaszokD = new string[5000];
         public string[] kategoriak = new string[5000];
+        public string[] kategoriak2 = new string[5000];
         public string[] helyesValaszok = new string[5000];
-
+        Profile pf = new Profile();
+        public string[] themakk = new string[500];
 
         public JatekKerdesek()
         {
             for (int i = 0; i < osszSor.Length; i++)
             {
                 string[] adatok = osszSor[i].Split(';');
-                nehezsegek[i] = Convert.ToInt32(adatok[0]);
-                kerdesek[i] = adatok[1];
-                valaszokA[i] = adatok[2];
-                valaszokB[i] = adatok[3];
-                valaszokC[i] = adatok[4];
-                valaszokD[i] = adatok[5];
-                helyesValaszok[i] = adatok[6];
-                kategoriak[i] = adatok[7];
+                kategoriak2[i] = adatok[7];
+            }
+            for (int i = 0; i < temakorok.Length; i++)
+            {
+                string[] temak = temakorok[i].Split(';');
+                themakk[i] = temak[0];
+            }
+            
+            if (Properties.Settings.Default.nehezseg.Equals("easy"))
+            {
+                int k = 0;
+                for (int i = 0; i < osszSor.Length; i++)
+                {
+                    string[] adatok = osszSor[i].Split(';');
+                    if (themakk.Contains<string>(kategoriak2[i]))
+                    {
+                        nehezsegek[k] = Convert.ToInt32(adatok[0]);
+                        kerdesek[k] = adatok[1];
+                        valaszokA[k] = adatok[2];
+                        valaszokB[k] = adatok[3];
+                        valaszokC[k] = adatok[4];
+                        valaszokD[k] = adatok[5];
+                        helyesValaszok[k] = adatok[6];
+                        kategoriak[k] = adatok[7];
+                        k++;
+                    }
+                }
+            }
+            else if (Properties.Settings.Default.nehezseg.Equals("normal"))
+            {
+                for (int i = 0; i < osszSor.Length; i++)
+                {
+                    string[] adatok = osszSor[i].Split(';');
+                    nehezsegek[i] = Convert.ToInt32(adatok[0]);
+                    kerdesek[i] = adatok[1];
+                    valaszokA[i] = adatok[2];
+                    valaszokB[i] = adatok[3];
+                    valaszokC[i] = adatok[4];
+                    valaszokD[i] = adatok[5];
+                    helyesValaszok[i] = adatok[6];
+                    kategoriak[i] = adatok[7];
+                }
+            }
+            else if (Properties.Settings.Default.nehezseg.Equals("hard"))
+            {
+                int k = 0;
+                for (int i = 0; i < osszSor.Length; i++)
+                {
+                    string[] adatok = osszSor[i].Split(';');
+                    if (themakk.Contains<string>(kategoriak2[i]))
+                    {
+                        nehezsegek[k] = Convert.ToInt32(adatok[0]);
+                        kerdesek[k] = adatok[1];
+                        valaszokA[k] = adatok[2];
+                        valaszokB[k] = adatok[3];
+                        valaszokC[k] = adatok[4];
+                        valaszokD[k] = adatok[5];
+                        helyesValaszok[k] = adatok[6];
+                        kategoriak[k] = adatok[7];
+                        k++;
+                    }
+                }
             }
         }
 

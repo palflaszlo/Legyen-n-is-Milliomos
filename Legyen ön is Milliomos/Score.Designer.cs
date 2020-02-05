@@ -30,35 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pontszam));
             this.listScore = new System.Windows.Forms.ListView();
-            this.lvfirstname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvpontod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lvpontod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvlastname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listScore
             // 
             this.listScore.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lvfirstname,
-            this.lvlastname,
+            this.lvname,
             this.lvpontod});
             this.listScore.FullRowSelect = true;
             this.listScore.GridLines = true;
             this.listScore.Location = new System.Drawing.Point(282, 12);
             this.listScore.Name = "listScore";
-            this.listScore.Size = new System.Drawing.Size(398, 426);
+            this.listScore.Size = new System.Drawing.Size(246, 416);
             this.listScore.TabIndex = 0;
             this.listScore.UseCompatibleStateImageBehavior = false;
             this.listScore.View = System.Windows.Forms.View.Details;
             this.listScore.SelectedIndexChanged += new System.EventHandler(this.listScore_SelectedIndexChanged);
             // 
-            // lvfirstname
+            // lvname
             // 
-            this.lvfirstname.Text = "First name";
-            this.lvfirstname.Width = 150;
+            this.lvname.Text = "Your name";
+            this.lvname.Width = 150;
+            // 
+            // lvpontod
+            // 
+            this.lvpontod.Text = "Highscore";
+            this.lvpontod.Width = 90;
             // 
             // btnBack
             // 
@@ -100,16 +103,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "A pontszámod a megválaszolt kérdéseid alapján jön ki.";
             // 
-            // lvpontod
-            // 
-            this.lvpontod.Text = "Highscore";
-            this.lvpontod.Width = 90;
-            // 
-            // lvlastname
-            // 
-            this.lvlastname.Text = "Last name";
-            this.lvlastname.Width = 150;
-            // 
             // pontszam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,8 +129,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ColumnHeader lvfirstname;
+        private System.Windows.Forms.ColumnHeader lvname;
         private System.Windows.Forms.ColumnHeader lvpontod;
-        private System.Windows.Forms.ColumnHeader lvlastname;
     }
 }

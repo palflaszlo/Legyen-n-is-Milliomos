@@ -19,7 +19,7 @@ namespace Legyen_ön_is_Milliomos
         Profile pf = new Profile();
         Settings options = new Settings();
         private int szintT = 1;
-        private int N = 1;
+        private int N;
         private string betu = "A";
         public int[] tomb = new int[5000];
         System.Timers.Timer t = new System.Timers.Timer();
@@ -27,6 +27,7 @@ namespace Legyen_ön_is_Milliomos
         int h, m, s, h2, m2, s2;
 
         public int pontszam;
+        public bool dontRunHandler;
 
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
@@ -86,44 +87,9 @@ namespace Legyen_ön_is_Milliomos
         public Game()
         {
             InitializeComponent();
-            if (options.teljesAblak)
+            for (int i = 0; i < pf.helps.Length; i++)
             {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
-            }
-            for (int i = 0; i < 5000; i++)
-            {
-                tomb[i] = r.Next(0, 4999);
-            }
-            text();
-            if (pf.helps.Contains<string>("Felező"))
-            {
-                felezo.Enabled = true;
-            }
-            else
-            {
-                felezo.Enabled = false;
-            }
-            if (pf.helps.Contains<string>("Közönség"))
-            {
-                button2.Enabled = true;
-            }
-            else
-            {
-                button2.Enabled = false;
-            }
-            if (pf.helps.Contains<string>("Telefonos"))
-            {
-                button3.Enabled = true;
-            }
-            else
-            {
-                button3.Enabled = false;
+                //comboBox1.Items.Add(pf.helps[i]);
             }
         }
 
@@ -155,53 +121,53 @@ namespace Legyen_ön_is_Milliomos
                 thirdAnswear.Visible = true;
                 t.Stop();
                 t2.Stop();
-                pontszam++;
                 switch (szintT)
                 {
                     case 1: lvl1.BackColor = Color.Orange; break;
                     case 2:
                         lvl2.BackColor = Color.Orange;
-                        lvl1.BackColor = Color.Green; break;
+                        lvl1.BackColor = Color.Green; pontszam++; break;
                     case 3:
                         lvl3.BackColor = Color.Orange;
-                        lvl2.BackColor = Color.Green; break;
+                        lvl2.BackColor = Color.Green; pontszam++; break;
                     case 4:
                         lvl4.BackColor = Color.Orange;
-                        lvl3.BackColor = Color.Green; break;
+                        lvl3.BackColor = Color.Green; pontszam++; break;
                     case 5:
                         lvl5.BackColor = Color.Orange;
-                        lvl4.BackColor = Color.Green; break;
+                        lvl4.BackColor = Color.Green; pontszam++; break;
                     case 6:
                         lvl6.BackColor = Color.Orange;
-                        lvl5.BackColor = Color.Green; break;
+                        lvl5.BackColor = Color.Green; pontszam++; break;
                     case 7:
                         lvl7.BackColor = Color.Orange;
-                        lvl6.BackColor = Color.Green; break;
+                        lvl6.BackColor = Color.Green; pontszam++; break;
                     case 8:
                         lvl8.BackColor = Color.Orange;
-                        lvl7.BackColor = Color.Green; break;
+                        lvl7.BackColor = Color.Green; pontszam++; break;
                     case 9:
                         lvl9.BackColor = Color.Orange;
-                        lvl8.BackColor = Color.Green; break;
+                        lvl8.BackColor = Color.Green; pontszam++; break;
                     case 10:
                         lvl10.BackColor = Color.Orange;
-                        lvl9.BackColor = Color.Green; break;
+                        lvl9.BackColor = Color.Green; pontszam++; break;
                     case 11:
                         lvl11.BackColor = Color.Orange;
-                        lvl10.BackColor = Color.Green; break;
+                        lvl10.BackColor = Color.Green; pontszam++; break;
                     case 12:
                         lvl12.BackColor = Color.Orange;
-                        lvl11.BackColor = Color.Green; break;
+                        lvl11.BackColor = Color.Green; pontszam++; break;
                     case 13:
                         lvl13.BackColor = Color.Orange;
-                        lvl12.BackColor = Color.Green; break;
+                        lvl12.BackColor = Color.Green; pontszam++; break;
                     case 14:
                         lvl14.BackColor = Color.Orange;
-                        lvl13.BackColor = Color.Green; break;
+                        lvl13.BackColor = Color.Green; pontszam++; break;
                     case 15:
                         lvl15.BackColor = Color.Orange;
-                        lvl14.BackColor = Color.Green; break;
-                    default: lvl15.BackColor = Color.Green; break;
+                        lvl14.BackColor = Color.Green; pontszam++; break;
+                    case 16: lvl15.BackColor = Color.Green; pontszam++;
+                        Properties.Settings.Default.levels = pontszam; break;
                 }
             }
             catch (Exception ex)
@@ -217,7 +183,6 @@ namespace Legyen_ön_is_Milliomos
             string caption = "Game over!";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
-
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons);
             if (result == System.Windows.Forms.DialogResult.OK)
@@ -241,7 +206,6 @@ namespace Legyen_ön_is_Milliomos
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                
             }
         }
 
@@ -291,86 +255,206 @@ namespace Legyen_ön_is_Milliomos
 
         private void firstAnswer_Click(object sender, EventArgs e)
         {
-            betu = "A";
-            firstAnswer.BackColor = Color.Orange;
-            Thread tt = new Thread(staart);
-            tt.Start();
+            if (dontRunHandler)
+            {
+                betu = "A";
+                firstAnswer.BackColor = Color.Orange;
+                string helyes = jk.helyesBetu(N);
+                switch (helyes)
+                {
+                    case "A": firstAnswer.BackColor = Color.Green; break;
+                    case "B": secondAnswear.BackColor = Color.Green; break;
+                    case "C": thirdAnswear.BackColor = Color.Green; break;
+                    case "D": forthAnswear.BackColor = Color.Green; break;
+                }
+                //ide még egy zene jön
+                string message = "You gave up on this level. You won the "+ szintT + "level";
+                string caption = "Game over!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Closes the parent form.
+                    Application.DoEvents();
+                    this.Close();
+                }
+            }
+            else
+            {
+                betu = "A";
+                firstAnswer.BackColor = Color.Orange;
+                Thread tt = new Thread(staart);
+                tt.Start();
+            }
         }
 
         private void secondAnswear_Click(object sender, EventArgs e)
         {
-            betu = "B";
-            secondAnswear.BackColor = Color.Orange;
-            Thread tt = new Thread(staart);
-            tt.Start();
+            if (dontRunHandler)
+            {
+                betu = "B";
+                secondAnswear.BackColor = Color.Orange;
+                string helyes = jk.helyesBetu(N);
+                switch (helyes)
+                {
+                    case "A": firstAnswer.BackColor = Color.Green; break;
+                    case "B": secondAnswear.BackColor = Color.Green; break;
+                    case "C": thirdAnswear.BackColor = Color.Green; break;
+                    case "D": forthAnswear.BackColor = Color.Green; break;
+                }
+                //ide még egy zene jön
+                string message = "You gave up on this level. You won the " + szintT + "level";
+                string caption = "Game over!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Closes the parent form.
+                    Application.DoEvents();
+                    this.Close();
+                }
+            }
+            else
+            {
+                betu = "B";
+                secondAnswear.BackColor = Color.Orange;
+                Thread tt = new Thread(staart);
+                tt.Start();
+            }
         }
 
         private void megallas_Click(object sender, EventArgs e)
         {
-            if (firstAnswer.Focused)
-            {
-                betu = "A";
-                firstAnswer.BackColor = Color.Orange;
-            }
-            if (secondAnswear.Focused)
-            {
-                betu = "B";
-                secondAnswear.BackColor = Color.Orange;
-            }
-            if (thirdAnswear.Focused)
-            {
-                betu = "C";
-                thirdAnswear.BackColor = Color.Orange;
-            }
-            if (forthAnswear.Focused)
-            {
-                betu = "D";
-                forthAnswear.BackColor = Color.Orange;
-            }
-            string helyes = jk.helyesBetu(N);
-            switch (helyes)
-            {
-                case "A": firstAnswer.BackColor = Color.Green; break;
-                case "B": secondAnswear.BackColor = Color.Green; break;
-                case "C": thirdAnswear.BackColor = Color.Green; break;
-                case "D": forthAnswear.BackColor = Color.Green; break;
-            }
-            //ide még egy zene jön
-            string message = "You gave up this level. You won the {0}", szintT;
-            string caption = "Game over!";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.OK)
-            {
-                // Closes the parent form.
-                Application.DoEvents();
-                this.Close();
-            }
+            dontRunHandler = true;           
         }
 
         private void thirdAnswear_Click(object sender, EventArgs e)
         {
-            betu = "C";
-            thirdAnswear.BackColor = Color.Orange;
-            Thread tt = new Thread(staart);
-            tt.Start();
+            if (dontRunHandler)
+            {
+                betu = "C";
+                thirdAnswear.BackColor = Color.Orange;
+                string helyes = jk.helyesBetu(N);
+                switch (helyes)
+                {
+                    case "A": firstAnswer.BackColor = Color.Green; break;
+                    case "B": secondAnswear.BackColor = Color.Green; break;
+                    case "C": thirdAnswear.BackColor = Color.Green; break;
+                    case "D": forthAnswear.BackColor = Color.Green; break;
+                }
+                //ide még egy zene jön
+                string message = "You gave up on this level. You won the " + szintT + "level";
+                string caption = "Game over!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Closes the parent form.
+                    Application.DoEvents();
+                    this.Close();
+                }
+            }
+            else
+            {
+                betu = "C";
+                thirdAnswear.BackColor = Color.Orange;
+                Thread tt = new Thread(staart);
+                tt.Start();
+            }
+            
         }
 
         private void forthAnswear_Click(object sender, EventArgs e)
         {
-            betu = "D";
-            forthAnswear.BackColor = Color.Orange;
-            Thread tt = new Thread(staart);
-            tt.Start();
+            if (dontRunHandler)
+            {
+                betu = "D";
+                forthAnswear.BackColor = Color.Orange;
+                string helyes = jk.helyesBetu(N);
+                switch (helyes)
+                {
+                    case "A": firstAnswer.BackColor = Color.Green; break;
+                    case "B": secondAnswear.BackColor = Color.Green; break;
+                    case "C": thirdAnswear.BackColor = Color.Green; break;
+                    case "D": forthAnswear.BackColor = Color.Green; break;
+                }
+                //ide még egy zene jön
+                string message = "You gave up on this level. You won the " + szintT + "level";
+                string caption = "Game over!";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    // Closes the parent form.
+                    Application.DoEvents();
+                    this.Close();
+                }
+            }
+            else
+            {
+                betu = "D";
+                forthAnswear.BackColor = Color.Orange;
+                Thread tt = new Thread(staart);
+                tt.Start();
+            }
+            
         }
 
         private void Game_Load_1(object sender, EventArgs e)
         {
             t.Interval = 1000;
             t.Elapsed += OnTimeEvent;
+            if (options.teljesAblak)
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                WindowState = FormWindowState.Normal;
+            }
+            for (int i = 0; i < 5000; i++)
+            {
+                tomb[i] = r.Next(0, 4999);
+            }
+            text();
+            string segit = "Felező";
+            string[] segitsegek = Properties.Settings.Default.helps.Split(',');
+            if (segitsegek.Contains<string>(segit))
+            {
+                felezo.Enabled = true;
+            }
+            else
+            {
+                felezo.Enabled = false;
+            }
+            segit = "Közönség";
+            if (segitsegek.Contains<string>(segit))
+            {
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+            }
+            segit = "Telefonos";
+            if (segitsegek.Contains<string>(segit))
+            {
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
         }
 
         private void btnExitGame_Click(object sender, EventArgs e)
@@ -383,6 +467,7 @@ namespace Legyen_ön_is_Milliomos
         private void felezo_Click_1(object sender, EventArgs e)
         {
             string helyesvalasz = jk.helyesBetu(N);
+            label1.Text = helyesvalasz;
             int HV = 0;
             switch (helyesvalasz)
             {
@@ -391,14 +476,13 @@ namespace Legyen_ön_is_Milliomos
                 case "C": HV = 2; break;
                 case "D": HV = 3; break;
             }
-            int rand, rand2 = 0;
+            int rand, rand2;
             do
             {
-
                 rand = r.Next(0, 4);
                 rand2 = r.Next(0, 4);
-
-            } while (rand == HV || rand2 == HV);
+            } while (rand == rand2 || rand == HV || rand2 == HV);
+            label2.Text = HV + " " + rand + " " + rand2;
             switch (rand)
             {
                 case 0:
@@ -421,7 +505,10 @@ namespace Legyen_ön_is_Milliomos
                 case 3:
                     forthAnswear.Visible = false; break;
             }
-            felezo.Enabled = false;
+            if(!firstAnswer.Visible || !secondAnswear.Visible || !thirdAnswear.Visible || !forthAnswear.Visible)
+            {
+                felezo.Enabled = false;
+            }
         }
     }
 }

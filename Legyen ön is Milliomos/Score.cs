@@ -49,21 +49,8 @@ namespace Legyen_ön_is_Milliomos
             var list = new List<Pontszam>();
             list.Add(new Pontszam()
             {
-                FirstName = "Jancsi",
-                LastName = "Kukorica",
-                Highscore = 5
-            });
-            list.Add(new Pontszam()
-            {
-                FirstName = "asdad",
-                LastName = "sdfg",
-                Highscore = 2
-            });
-            list.Add(new Pontszam()
-            {
-                FirstName = "bdbwef",
-                LastName = "dxrt",
-                Highscore = 3
+                YourName = Properties.Settings.Default.playerName, 
+                Highscore = Properties.Settings.Default.levels
             });
             return list;
         }
@@ -78,7 +65,7 @@ namespace Legyen_ön_is_Milliomos
                 //ListViewItem lvi = new ListViewItem("John Doe");
                 //lvi.SubItems.Add("lndsvlsdn");
                 //lvi.SubItems.Add("123");
-                var row = new string[] { person.FirstName, person.LastName, Convert.ToString(person.Highscore) };
+                var row = new string[] { person.YourName, Convert.ToString(person.Highscore) };
                 var lvi = new ListViewItem(row);
                 //we add the whole object to the Tag property if we want 
                 //later to dispplay details about the selected item

@@ -8,8 +8,7 @@ namespace Legyen_ön_is_Milliomos
 {
     class Pontszam
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string YourName { get; set; }
         public int Highscore { get; set; }
         public int Id { get; set; }
 
@@ -20,7 +19,7 @@ namespace Legyen_ön_is_Milliomos
 
         public override string ToString()
         {
-            var details = string.Format("{0} {1} {2} {3}", Id, FirstName, LastName, Highscore);
+            var details = string.Format("{0} {1} {2}", Id, YourName, Highscore);
             return details;
         }
     }
