@@ -21,7 +21,6 @@ namespace Legyen_ön_is_Milliomos
         public string[] temakor = new string[20];
         public string difficulty = "A";
         public int levelsWon = 0;
-        Settings options = new Settings();
 
         public Profile()
         {
@@ -103,16 +102,6 @@ namespace Legyen_ön_is_Milliomos
                     var index = this.checkedListBox2.Items.IndexOf(item);
                     this.checkedListBox2.SetItemChecked(index, true);
                 });
-            }
-            if (options.teljesAblak)
-            {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
             }
         }
 

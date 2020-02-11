@@ -78,6 +78,18 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="JatekKerdesek.cs" />
+    <Compile Include="NewQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewQuestion.Designer.cs">
+      <DependentUpon>NewQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pictures.Designer.cs">
+      <DependentUpon>Pictures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pontszam.cs" />
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
@@ -93,17 +105,17 @@
     <Compile Include="Score.Designer.cs">
       <DependentUpon>Score.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQuestion.resx">
+      <DependentUpon>NewQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pictures.resx">
+      <DependentUpon>Pictures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
@@ -119,9 +131,6 @@
     </Compile>
     <EmbeddedResource Include="Score.resx">
       <DependentUpon>Score.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

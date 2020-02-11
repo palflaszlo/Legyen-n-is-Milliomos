@@ -32,10 +32,11 @@
             this.btmStart = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.btnOptions = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnScore = new System.Windows.Forms.Button();
+            this.btnKerdes = new System.Windows.Forms.Button();
+            this.btnPicKviz = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btmStart
@@ -69,16 +70,6 @@
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // btnOptions
-            // 
-            this.btnOptions.Location = new System.Drawing.Point(12, 12);
-            this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(70, 70);
-            this.btnOptions.TabIndex = 3;
-            this.btnOptions.Text = "Beállítások";
-            this.btnOptions.UseVisualStyleBackColor = true;
-            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
-            // 
             // btnProfile
             // 
             this.btnProfile.Location = new System.Drawing.Point(325, 492);
@@ -109,6 +100,26 @@
             this.btnScore.UseVisualStyleBackColor = true;
             this.btnScore.Click += new System.EventHandler(this.btnScore_Click);
             // 
+            // btnKerdes
+            // 
+            this.btnKerdes.Location = new System.Drawing.Point(13, 12);
+            this.btnKerdes.Name = "btnKerdes";
+            this.btnKerdes.Size = new System.Drawing.Size(75, 76);
+            this.btnKerdes.TabIndex = 7;
+            this.btnKerdes.Text = "Kérdés felvétele";
+            this.btnKerdes.UseVisualStyleBackColor = true;
+            this.btnKerdes.Click += new System.EventHandler(this.btnKerdes_Click);
+            // 
+            // btnPicKviz
+            // 
+            this.btnPicKviz.Location = new System.Drawing.Point(13, 94);
+            this.btnPicKviz.Name = "btnPicKviz";
+            this.btnPicKviz.Size = new System.Drawing.Size(75, 63);
+            this.btnPicKviz.TabIndex = 8;
+            this.btnPicKviz.Text = "Kép kvíz";
+            this.btnPicKviz.UseVisualStyleBackColor = true;
+            this.btnPicKviz.Click += new System.EventHandler(this.btnPicKviz_Click);
+            // 
             // foAblak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,10 +128,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.btnPicKviz);
+            this.Controls.Add(this.btnKerdes);
             this.Controls.Add(this.btnScore);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btmStart);
@@ -136,10 +148,11 @@
         private System.Windows.Forms.Button btmStart;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnScore;
+        private System.Windows.Forms.Button btnKerdes;
+        private System.Windows.Forms.Button btnPicKviz;
     }
 }
 

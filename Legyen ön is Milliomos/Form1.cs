@@ -12,20 +12,9 @@ namespace Legyen_ön_is_Milliomos
 {
     public partial class foAblak : Form
     {
-        Settings options = new Settings();
         public foAblak()
         {
             InitializeComponent();
-            if (options.teljesAblak)
-            {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
-            }
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -54,14 +43,6 @@ namespace Legyen_ön_is_Milliomos
             this.Close();
         }
 
-        private void btnOptions_Click(object sender, EventArgs e)
-        {
-            Settings beallit = new Settings();
-            this.Hide();
-            beallit.ShowDialog();
-            this.Show();
-        }
-
         private void btnScore_Click(object sender, EventArgs e)
         {
             pontszam pontszam = new pontszam();
@@ -73,6 +54,22 @@ namespace Legyen_ön_is_Milliomos
         private void btnHelp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKerdes_Click(object sender, EventArgs e)
+        {
+            NewQuestion kerdes = new NewQuestion();
+            this.Hide();
+            kerdes.ShowDialog();
+            this.Show();
+        }
+
+        private void btnPicKviz_Click(object sender, EventArgs e)
+        {
+            Pictures kepek = new Pictures();
+            this.Hide();
+            kepek.ShowDialog();
+            this.Show();
         }
     }
 }

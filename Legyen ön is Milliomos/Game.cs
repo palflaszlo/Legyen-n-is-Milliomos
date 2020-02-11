@@ -17,7 +17,6 @@ namespace Legyen_ön_is_Milliomos
         public Random r = new Random();
         JatekKerdesek jk = new JatekKerdesek();
         Profile pf = new Profile();
-        Settings options = new Settings();
         private int szintT = 1;
         private int N;
         private string betu = "A";
@@ -412,16 +411,6 @@ namespace Legyen_ön_is_Milliomos
         {
             t.Interval = 1000;
             t.Elapsed += OnTimeEvent;
-            if (options.teljesAblak)
-            {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                FormBorderStyle = FormBorderStyle.Sizable;
-                WindowState = FormWindowState.Normal;
-            }
             for (int i = 0; i < 5000; i++)
             {
                 tomb[i] = r.Next(0, 4999);
