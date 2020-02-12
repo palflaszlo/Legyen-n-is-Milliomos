@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace Legyen_ön_is_Milliomos
         public Random r = new Random();
         JatekKerdesek jk = new JatekKerdesek();
         Profile pf = new Profile();
+        Pontszam pTsz = new Pontszam();
         private int szintT = 1;
         private int N;
         private string betu = "A";
@@ -86,10 +88,7 @@ namespace Legyen_ön_is_Milliomos
         public Game()
         {
             InitializeComponent();
-            for (int i = 0; i < pf.helps.Length; i++)
-            {
-                //comboBox1.Items.Add(pf.helps[i]);
-            }
+            pTsz.Id++;
         }
 
         public void text()
@@ -123,48 +122,34 @@ namespace Legyen_ön_is_Milliomos
                 switch (szintT)
                 {
                     case 1: lvl1.BackColor = Color.Orange; break;
-                    case 2:
-                        lvl2.BackColor = Color.Orange;
-                        lvl1.BackColor = Color.Green; pontszam++; break;
-                    case 3:
-                        lvl3.BackColor = Color.Orange;
-                        lvl2.BackColor = Color.Green; pontszam++; break;
-                    case 4:
-                        lvl4.BackColor = Color.Orange;
-                        lvl3.BackColor = Color.Green; pontszam++; break;
-                    case 5:
-                        lvl5.BackColor = Color.Orange;
-                        lvl4.BackColor = Color.Green; pontszam++; break;
-                    case 6:
-                        lvl6.BackColor = Color.Orange;
-                        lvl5.BackColor = Color.Green; pontszam++; break;
-                    case 7:
-                        lvl7.BackColor = Color.Orange;
-                        lvl6.BackColor = Color.Green; pontszam++; break;
-                    case 8:
-                        lvl8.BackColor = Color.Orange;
-                        lvl7.BackColor = Color.Green; pontszam++; break;
-                    case 9:
-                        lvl9.BackColor = Color.Orange;
-                        lvl8.BackColor = Color.Green; pontszam++; break;
-                    case 10:
-                        lvl10.BackColor = Color.Orange;
-                        lvl9.BackColor = Color.Green; pontszam++; break;
-                    case 11:
-                        lvl11.BackColor = Color.Orange;
-                        lvl10.BackColor = Color.Green; pontszam++; break;
-                    case 12:
-                        lvl12.BackColor = Color.Orange;
-                        lvl11.BackColor = Color.Green; pontszam++; break;
-                    case 13:
-                        lvl13.BackColor = Color.Orange;
-                        lvl12.BackColor = Color.Green; pontszam++; break;
-                    case 14:
-                        lvl14.BackColor = Color.Orange;
-                        lvl13.BackColor = Color.Green; pontszam++; break;
-                    case 15:
-                        lvl15.BackColor = Color.Orange;
-                        lvl14.BackColor = Color.Green; pontszam++; break;
+                    case 2: lvl2.BackColor = Color.Orange;
+                            lvl1.BackColor = Color.Green; pontszam++; break;
+                    case 3: lvl3.BackColor = Color.Orange;
+                            lvl2.BackColor = Color.Green; pontszam++; break;
+                    case 4: lvl4.BackColor = Color.Orange;
+                            lvl3.BackColor = Color.Green; pontszam++; break;
+                    case 5: lvl5.BackColor = Color.Orange;
+                            lvl4.BackColor = Color.Green; pontszam++; break;
+                    case 6: lvl6.BackColor = Color.Orange;
+                            lvl5.BackColor = Color.Green; pontszam++; break;
+                    case 7: lvl7.BackColor = Color.Orange;
+                            lvl6.BackColor = Color.Green; pontszam++; break;
+                    case 8: lvl8.BackColor = Color.Orange;
+                            lvl7.BackColor = Color.Green; pontszam++; break;
+                    case 9: lvl9.BackColor = Color.Orange;
+                            lvl8.BackColor = Color.Green; pontszam++; break;
+                    case 10: lvl10.BackColor = Color.Orange;
+                             lvl9.BackColor = Color.Green; pontszam++; break;
+                    case 11: lvl11.BackColor = Color.Orange;
+                             lvl10.BackColor = Color.Green; pontszam++; break;
+                    case 12: lvl12.BackColor = Color.Orange;
+                             lvl11.BackColor = Color.Green; pontszam++; break;
+                    case 13: lvl13.BackColor = Color.Orange;
+                             lvl12.BackColor = Color.Green; pontszam++; break;
+                    case 14: lvl14.BackColor = Color.Orange;
+                             lvl13.BackColor = Color.Green; pontszam++; break;
+                    case 15: lvl15.BackColor = Color.Orange;
+                             lvl14.BackColor = Color.Green; pontszam++; break;
                     case 16: lvl15.BackColor = Color.Green; pontszam++;
                         Properties.Settings.Default.levels = pontszam; break;
                 }
@@ -173,7 +158,6 @@ namespace Legyen_ön_is_Milliomos
             {
                 MessageBox.Show(ex.ToString());
             }
-            
         }
 
         public void error()
@@ -331,6 +315,19 @@ namespace Legyen_ön_is_Milliomos
             dontRunHandler = true;           
         }
 
+        private void Game_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.ID = pTsz.Id;
+            int ize = Properties.Settings.Default.ID;
+            Properties.Settings.Default.levels = pontszam;
+            Properties.Settings.Default.Save();
+            using (StreamWriter outputFile = File.AppendText("pontszamok.txt"))
+            {
+                //outputFile.Write(ize + ';');
+                outputFile.WriteLine(Properties.Settings.Default.playerName + ';' + pontszam + ';' + ize);
+            }
+        }
+
         private void thirdAnswear_Click(object sender, EventArgs e)
         {
             if (dontRunHandler)
@@ -474,25 +471,17 @@ namespace Legyen_ön_is_Milliomos
             label2.Text = HV + " " + rand + " " + rand2;
             switch (rand)
             {
-                case 0:
-                    firstAnswer.Visible = false; break;
-                case 1:
-                    secondAnswear.Visible = false; break;
-                case 2:
-                    thirdAnswear.Visible = false; break;
-                case 3:
-                    forthAnswear.Visible = false; break;
+                case 0: firstAnswer.Visible = false; break;
+                case 1: secondAnswear.Visible = false; break;
+                case 2: thirdAnswear.Visible = false; break;
+                case 3: forthAnswear.Visible = false; break;
             }
             switch (rand2)
             {
-                case 0:
-                    firstAnswer.Visible = false; break;
-                case 1:
-                    secondAnswear.Visible = false; break;
-                case 2:
-                    thirdAnswear.Visible = false; break;
-                case 3:
-                    forthAnswear.Visible = false; break;
+                case 0: firstAnswer.Visible = false; break;
+                case 1: secondAnswear.Visible = false; break;
+                case 2: thirdAnswear.Visible = false; break;
+                case 3: forthAnswear.Visible = false; break;
             }
             if(!firstAnswer.Visible || !secondAnswear.Visible || !thirdAnswear.Visible || !forthAnswear.Visible)
             {

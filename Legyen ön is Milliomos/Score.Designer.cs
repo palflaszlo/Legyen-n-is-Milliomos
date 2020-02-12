@@ -36,18 +36,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lvlID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listScore
             // 
             this.listScore.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvlID,
             this.lvname,
             this.lvpontod});
             this.listScore.FullRowSelect = true;
             this.listScore.GridLines = true;
             this.listScore.Location = new System.Drawing.Point(282, 12);
             this.listScore.Name = "listScore";
-            this.listScore.Size = new System.Drawing.Size(246, 416);
+            this.listScore.Size = new System.Drawing.Size(307, 416);
             this.listScore.TabIndex = 0;
             this.listScore.UseCompatibleStateImageBehavior = false;
             this.listScore.View = System.Windows.Forms.View.Details;
@@ -103,6 +105,10 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "A pontszámod a megválaszolt kérdéseid alapján jön ki.";
             // 
+            // lvlID
+            // 
+            this.lvlID.Text = "I.D.";
+            // 
             // pontszam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,5 +139,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader lvname;
         private System.Windows.Forms.ColumnHeader lvpontod;
+        private System.Windows.Forms.ColumnHeader lvlID;
     }
 }

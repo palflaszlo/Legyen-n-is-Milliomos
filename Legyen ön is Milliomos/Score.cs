@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,22 @@ namespace Legyen_ön_is_Milliomos
     public partial class pontszam : Form
     {
         Game jatek = new Game();
+        string[] osszSor = File.ReadAllLines("pontszamok.txt", Encoding.UTF8);
+        public int[] pontszamook = new int[50000];
+        public string[] nevek = new string[50000];
+        public int[] idk = new int[50000];
+
         public pontszam()
         {
             InitializeComponent();
+
+            for (int i = 0; i < osszSor.Length; i++)
+            {
+                string[] adatok = osszSor[i].Split(';');
+                pontszamook[i] = Convert.ToInt32(adatok[1]);
+                nevek[i] = adatok[0];
+                idk[i] = Convert.ToInt32(adatok[2]);
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -29,18 +43,22 @@ namespace Legyen_ön_is_Milliomos
             var selectedItem = (Pontszam)listScore.SelectedItems[0].Tag;
             if(selectedItem != null)
             {
-                MessageBox.Show(selectedItem.ToString(), "Person details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(selectedItem.ToString(), "Personal details", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private List<Pontszam> GetPontszamList()
         {
             var list = new List<Pontszam>();
-            list.Add(new Pontszam()
+            for (int i = 0; i < osszSor.Length; i++)
             {
-                YourName = Properties.Settings.Default.playerName, 
-                Highscore = Properties.Settings.Default.levels
-            });
+                list.Add(new Pontszam()
+                {
+                    Id = idk[i], 
+                    YourName = nevek[i], 
+                    Highscore = pontszamook[i]
+                });
+            }
             return list;
         }
 
@@ -48,13 +66,13 @@ namespace Legyen_ön_is_Milliomos
         {
             var pontSZ = GetPontszamList();
             //clear the listview
-            listScore.Items.Clear();
+            //listScore.Items.Clear();
             foreach (var person in pontSZ)
             {
                 //ListViewItem lvi = new ListViewItem("John Doe");
                 //lvi.SubItems.Add("lndsvlsdn");
                 //lvi.SubItems.Add("123");
-                var row = new string[] { person.YourName, Convert.ToString(person.Highscore) };
+                var row = new string[] { Convert.ToString(person.Id), person.YourName, Convert.ToString(person.Highscore) };
                 var lvi = new ListViewItem(row);
                 //we add the whole object to the Tag property if we want 
                 //later to dispplay details about the selected item

@@ -14,7 +14,6 @@ namespace Legyen_ön_is_Milliomos
 
         public Pontszam()
         {
-            Id = new Random().Next(0, 10000);
         }
 
         public override string ToString()

@@ -144,9 +144,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 238);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.Size = new System.Drawing.Size(115, 13);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Helyes válasz";
+            this.label7.Text = "Helyes válasz betűjele:";
             // 
             // helyesValasz
             // 
@@ -160,9 +160,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 277);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 13);
+            this.label8.Size = new System.Drawing.Size(165, 13);
             this.label8.TabIndex = 14;
-            this.label8.Text = "A kérdés nehézségi szintje:";
+            this.label8.Text = "A kérdés nehézségi szintje: (1-15)";
             // 
             // nehezsegiSzint
             // 

@@ -78,6 +78,7 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="JatekKerdesek.cs" />
+    <Compile Include="KepJatekKerdesek.cs" />
     <Compile Include="NewQuestion.cs">
       <SubType>Form</SubType>
     </Compile>

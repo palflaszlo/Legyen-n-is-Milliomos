@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Legyen_ön_is_Milliomos
 {
-    class JatekKerdesek
+    class KepJatekKerdesek
     {
         public Random r = new Random();
         string[] osszSor = File.ReadAllLines("kerdes.txt", Encoding.UTF8);
@@ -23,9 +23,9 @@ namespace Legyen_ön_is_Milliomos
         public string[] kategoriak2 = new string[50000];
         public string[] helyesValaszok = new string[50000];
         Profile pf = new Profile();
-        public string[] themakk = new string[500];
+        public string[] themakk = new string[50000];
 
-        public JatekKerdesek()
+        public KepJatekKerdesek()
         {
             for (int i = 0; i < osszSor.Length; i++)
             {
@@ -37,7 +37,7 @@ namespace Legyen_ön_is_Milliomos
                 string[] temak = temakorok[i].Split(';');
                 themakk[i] = temak[0];
             }
-            
+
             if (Properties.Settings.Default.nehezseg.Equals("easy"))
             {
                 int k = 0;
@@ -124,7 +124,7 @@ namespace Legyen_ön_is_Milliomos
 
             return sor;
         }
-        
+
         public string getKerdes(int sor, int szint)
         {
             string kerdes = "Nincs semmi";
@@ -161,7 +161,7 @@ namespace Legyen_ön_is_Milliomos
             valaszD = valaszokD[j];
             return valaszD;
         }
-        
+
         public string helyesBetu(int sor)
         {
             string valasz = "";

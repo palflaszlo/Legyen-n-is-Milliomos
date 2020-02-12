@@ -85,7 +85,6 @@ namespace Legyen_ön_is_Milliomos.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int levels {
             get {
                 return ((int)(this["levels"]));
@@ -104,6 +103,18 @@ namespace Legyen_ön_is_Milliomos.Properties {
             }
             set {
                 this["themes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ID {
+            get {
+                return ((int)(this["ID"]));
+            }
+            set {
+                this["ID"] = value;
             }
         }
     }
