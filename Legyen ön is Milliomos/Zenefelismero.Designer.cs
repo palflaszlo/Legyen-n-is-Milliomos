@@ -51,10 +51,11 @@
             this.valaszD = new System.Windows.Forms.Label();
             this.valaszC = new System.Windows.Forms.Label();
             this.valaszB = new System.Windows.Forms.Label();
-            this.valaszA = new System.Windows.Forms.Label();
             this.picQu = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnZene = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.valaszA = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lvl15
@@ -248,6 +249,7 @@
             this.felezo.TabIndex = 72;
             this.felezo.Text = "felezés";
             this.felezo.UseVisualStyleBackColor = true;
+            this.felezo.Click += new System.EventHandler(this.felezo_Click_1);
             // 
             // megallas
             // 
@@ -257,6 +259,7 @@
             this.megallas.TabIndex = 71;
             this.megallas.Text = "Megállni";
             this.megallas.UseVisualStyleBackColor = true;
+            this.megallas.Click += new System.EventHandler(this.megallas_Click);
             // 
             // valaszD
             // 
@@ -268,6 +271,7 @@
             this.valaszD.Size = new System.Drawing.Size(301, 65);
             this.valaszD.TabIndex = 70;
             this.valaszD.Text = "D válasz";
+            this.valaszD.Click += new System.EventHandler(this.valaszD_Click_1);
             // 
             // valaszC
             // 
@@ -279,6 +283,7 @@
             this.valaszC.Size = new System.Drawing.Size(305, 65);
             this.valaszC.TabIndex = 69;
             this.valaszC.Text = "C válasz";
+            this.valaszC.Click += new System.EventHandler(this.valaszC_Click_1);
             // 
             // valaszB
             // 
@@ -290,28 +295,18 @@
             this.valaszB.Size = new System.Drawing.Size(301, 66);
             this.valaszB.TabIndex = 68;
             this.valaszB.Text = "B válasz";
-            // 
-            // valaszA
-            // 
-            this.valaszA.BackColor = System.Drawing.Color.Black;
-            this.valaszA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.valaszA.ForeColor = System.Drawing.Color.White;
-            this.valaszA.Location = new System.Drawing.Point(6, 302);
-            this.valaszA.Name = "valaszA";
-            this.valaszA.Size = new System.Drawing.Size(305, 66);
-            this.valaszA.TabIndex = 67;
-            this.valaszA.Text = "A válasz";
+            this.valaszB.Click += new System.EventHandler(this.valaszB_Click_1);
             // 
             // picQu
             // 
             this.picQu.BackColor = System.Drawing.Color.Black;
             this.picQu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.picQu.ForeColor = System.Drawing.Color.White;
-            this.picQu.Location = new System.Drawing.Point(6, 236);
+            this.picQu.Location = new System.Drawing.Point(6, 267);
             this.picQu.Name = "picQu";
-            this.picQu.Size = new System.Drawing.Size(612, 57);
+            this.picQu.Size = new System.Drawing.Size(389, 26);
             this.picQu.TabIndex = 66;
-            this.picQu.Text = "Mi van a képen?";
+            this.picQu.Text = "Ki a szerzője a számnak és mi a címe?";
             // 
             // btnBack
             // 
@@ -321,16 +316,39 @@
             this.btnBack.TabIndex = 65;
             this.btnBack.Text = "Vissza";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnZene
             // 
-            this.btnZene.Location = new System.Drawing.Point(13, 190);
+            this.btnZene.Location = new System.Drawing.Point(401, 267);
             this.btnZene.Name = "btnZene";
             this.btnZene.Size = new System.Drawing.Size(75, 23);
             this.btnZene.TabIndex = 90;
             this.btnZene.Text = "Play";
             this.btnZene.UseVisualStyleBackColor = true;
             this.btnZene.Click += new System.EventHandler(this.btnZene_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(543, 262);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 91;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // valaszA
+            // 
+            this.valaszA.BackColor = System.Drawing.Color.Black;
+            this.valaszA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.valaszA.ForeColor = System.Drawing.Color.White;
+            this.valaszA.Location = new System.Drawing.Point(6, 302);
+            this.valaszA.Name = "valaszA";
+            this.valaszA.Size = new System.Drawing.Size(305, 66);
+            this.valaszA.TabIndex = 92;
+            this.valaszA.Text = "A válasz";
+            this.valaszA.Click += new System.EventHandler(this.valaszA_Click);
             // 
             // Zenefelismero
             // 
@@ -339,6 +357,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.valaszA);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnZene);
             this.Controls.Add(this.lvl15);
             this.Controls.Add(this.lvl14);
@@ -362,11 +382,12 @@
             this.Controls.Add(this.valaszD);
             this.Controls.Add(this.valaszC);
             this.Controls.Add(this.valaszB);
-            this.Controls.Add(this.valaszA);
             this.Controls.Add(this.picQu);
             this.Controls.Add(this.btnBack);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Zenefelismero";
             this.Text = "Zenefelismero";
+            this.Load += new System.EventHandler(this.Zenefelismero_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,9 +417,10 @@
         private System.Windows.Forms.Label valaszD;
         private System.Windows.Forms.Label valaszC;
         private System.Windows.Forms.Label valaszB;
-        private System.Windows.Forms.Label valaszA;
         private System.Windows.Forms.Label picQu;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnZene;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Label valaszA;
     }
 }

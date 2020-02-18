@@ -32,9 +32,9 @@ namespace Legyen_ön_is_Milliomos
 
         private void btmStart_Click(object sender, EventArgs e)
         {
-            Game GameForm = new Game();
+            Form2 jatekFormok = new Form2();
             this.Hide();
-            GameForm.ShowDialog();
+            jatekFormok.ShowDialog();
             this.Show();
         }
 
@@ -51,32 +51,11 @@ namespace Legyen_ön_is_Milliomos
             this.Show();
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnKerdes_Click(object sender, EventArgs e)
         {
             NewQuestion kerdes = new NewQuestion();
             this.Hide();
             kerdes.ShowDialog();
-            this.Show();
-        }
-
-        private void btnPicKviz_Click(object sender, EventArgs e)
-        {
-            Pictures kepek = new Pictures();
-            this.Hide();
-            kepek.ShowDialog();
-            this.Show();
-        }
-
-        private void btnZene_Click(object sender, EventArgs e)
-        {
-            Zenefelismero zene = new Zenefelismero();
-            this.Hide();
-            zene.ShowDialog();
             this.Show();
         }
     }
