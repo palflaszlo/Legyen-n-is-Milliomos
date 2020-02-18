@@ -71,5 +71,13 @@ namespace Legyen_ön_is_Milliomos
             kepek.ShowDialog();
             this.Show();
         }
+
+        private void btnZene_Click(object sender, EventArgs e)
+        {
+            Zenefelismero zene = new Zenefelismero();
+            this.Hide();
+            zene.ShowDialog();
+            this.Show();
+        }
     }
 }

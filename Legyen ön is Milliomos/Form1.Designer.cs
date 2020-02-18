@@ -37,6 +37,7 @@
             this.btnScore = new System.Windows.Forms.Button();
             this.btnKerdes = new System.Windows.Forms.Button();
             this.btnPicKviz = new System.Windows.Forms.Button();
+            this.btnZene = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btmStart
@@ -120,6 +121,16 @@
             this.btnPicKviz.UseVisualStyleBackColor = true;
             this.btnPicKviz.Click += new System.EventHandler(this.btnPicKviz_Click);
             // 
+            // btnZene
+            // 
+            this.btnZene.Location = new System.Drawing.Point(13, 163);
+            this.btnZene.Name = "btnZene";
+            this.btnZene.Size = new System.Drawing.Size(75, 69);
+            this.btnZene.TabIndex = 9;
+            this.btnZene.Text = "Zene kvíz";
+            this.btnZene.UseVisualStyleBackColor = true;
+            this.btnZene.Click += new System.EventHandler(this.btnZene_Click);
+            // 
             // foAblak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +139,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 534);
+            this.Controls.Add(this.btnZene);
             this.Controls.Add(this.btnPicKviz);
             this.Controls.Add(this.btnKerdes);
             this.Controls.Add(this.btnScore);
@@ -153,6 +165,7 @@
         private System.Windows.Forms.Button btnScore;
         private System.Windows.Forms.Button btnKerdes;
         private System.Windows.Forms.Button btnPicKviz;
+        private System.Windows.Forms.Button btnZene;
     }
 }
 

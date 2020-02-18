@@ -106,6 +106,13 @@
     <Compile Include="Score.Designer.cs">
       <DependentUpon>Score.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zenefelismero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zenefelismero.Designer.cs">
+      <DependentUpon>Zenefelismero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zenekerdesek.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="Score.resx">
       <DependentUpon>Score.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zenefelismero.resx">
+      <DependentUpon>Zenefelismero.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
