@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pontszam));
             this.listScore = new System.Windows.Forms.ListView();
+            this.lvlID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvpontod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lvlID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listScore
             // 
+            this.listScore.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listScore.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.lvlID,
             this.lvname,
@@ -55,6 +56,10 @@
             this.listScore.View = System.Windows.Forms.View.Details;
             this.listScore.SelectedIndexChanged += new System.EventHandler(this.listScore_SelectedIndexChanged);
             // 
+            // lvlID
+            // 
+            this.lvlID.Text = "I.D.";
+            // 
             // lvname
             // 
             this.lvname.Text = "Your name";
@@ -67,9 +72,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(718, 368);
+            this.btnBack.Location = new System.Drawing.Point(733, 413);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 70);
+            this.btnBack.Size = new System.Drawing.Size(55, 25);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Vissza";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -104,10 +109,6 @@
             this.label3.Size = new System.Drawing.Size(264, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "A pontszámod a megválaszolt kérdéseid alapján jön ki.";
-            // 
-            // lvlID
-            // 
-            this.lvlID.Text = "I.D.";
             // 
             // pontszam
             // 

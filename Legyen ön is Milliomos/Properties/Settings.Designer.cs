@@ -117,5 +117,17 @@ namespace Legyen_ön_is_Milliomos.Properties {
                 this["ID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mentes {
+            get {
+                return ((bool)(this["mentes"]));
+            }
+            set {
+                this["mentes"] = value;
+            }
+        }
     }
 }

@@ -64,10 +64,6 @@ namespace Legyen_ön_is_Milliomos
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            foreach (var item in helps)
-            {
-                label9.Text += item + " ";
-            }
             //yourName = Properties.Settings.Default.playerName;
             if (!string.IsNullOrEmpty(Properties.Settings.Default.playerName))
             {

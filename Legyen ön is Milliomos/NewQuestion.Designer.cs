@@ -189,7 +189,7 @@
             // 
             // btnQuestionPlusz
             // 
-            this.btnQuestionPlusz.Location = new System.Drawing.Point(287, 359);
+            this.btnQuestionPlusz.Location = new System.Drawing.Point(12, 359);
             this.btnQuestionPlusz.Name = "btnQuestionPlusz";
             this.btnQuestionPlusz.Size = new System.Drawing.Size(93, 23);
             this.btnQuestionPlusz.TabIndex = 17;
@@ -199,7 +199,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(416, 359);
+            this.btnBack.Location = new System.Drawing.Point(111, 359);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 18;

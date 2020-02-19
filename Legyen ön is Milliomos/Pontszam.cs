@@ -12,9 +12,7 @@ namespace Legyen_ön_is_Milliomos
         public int Highscore { get; set; }
         public int Id { get; set; }
 
-        public Pontszam()
-        {
-        }
+        public Pontszam() { }
 
         public override string ToString()
         {

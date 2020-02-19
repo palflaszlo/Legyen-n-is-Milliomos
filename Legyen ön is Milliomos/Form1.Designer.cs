@@ -39,7 +39,9 @@
             // 
             // btmStart
             // 
+            this.btmStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btmStart.BackColor = System.Drawing.SystemColors.Control;
+            this.btmStart.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btmStart.Location = new System.Drawing.Point(13, 308);
             this.btmStart.Name = "btmStart";
             this.btmStart.Size = new System.Drawing.Size(125, 30);
@@ -50,6 +52,8 @@
             // 
             // btnLoad
             // 
+            this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLoad.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLoad.Location = new System.Drawing.Point(12, 344);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(125, 30);
@@ -60,6 +64,8 @@
             // 
             // btnProfile
             // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnProfile.Location = new System.Drawing.Point(13, 419);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(125, 30);
@@ -70,6 +76,8 @@
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(12, 491);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(125, 30);
@@ -80,6 +88,8 @@
             // 
             // btnScore
             // 
+            this.btnScore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnScore.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnScore.Location = new System.Drawing.Point(13, 455);
             this.btnScore.Name = "btnScore";
             this.btnScore.Size = new System.Drawing.Size(125, 30);
@@ -90,6 +100,8 @@
             // 
             // btnKerdes
             // 
+            this.btnKerdes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnKerdes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnKerdes.Location = new System.Drawing.Point(12, 380);
             this.btnKerdes.Name = "btnKerdes";
             this.btnKerdes.Size = new System.Drawing.Size(125, 30);

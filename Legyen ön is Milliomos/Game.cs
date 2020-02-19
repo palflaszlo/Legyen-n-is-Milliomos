@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Timers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,81 +15,53 @@ namespace Legyen_ön_is_Milliomos
 {
     public partial class Game : Form
     {
-        //public Label kerdes;
+        public bool dontRunHandler;
+        System.Timers.Timer t = new System.Timers.Timer();
+        System.Timers.Timer t2 = new System.Timers.Timer();
+        public int countDown = 0;
+        public int countDown2 = 0;
+
         public Random r = new Random();
+        foAblak ujrajatsz = new foAblak();
         JatekKerdesek jk = new JatekKerdesek();
         Profile pf = new Profile();
         Pontszam pTsz = new Pontszam();
         private int szintT = 1;
         private int N;
         private string betu = "A";
-        public int[] tomb = new int[5000];
-        System.Timers.Timer t = new System.Timers.Timer();
-        System.Timers.Timer t2 = new System.Timers.Timer();
-        int h, m, s, h2, m2, s2;
-
+        public int[] tomb = new int[50000];
+ 
         public int pontszam;
-        public bool dontRunHandler;
+        string[] mentettAllas;
 
-        private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
+        private void OnTimeEvent(object sender, ElapsedEventArgs e)
         {
-            Invoke(new Action(() =>
+            countDown++;
+            if (countDown % 3 == 0)
             {
-                s += 1;
-                if (s == 60)
-                {
-                    s = 0;
-                    m += 1;
-                }
-                if (m == 60)
-                {
-                    m = 0;
-                    h += 1;
-                }
-                //ide is jön egy zene
-                ellenor.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
-                
-            }));
-            string[] osztas = ellenor.Text.Split(':');
-            int osztando = Convert.ToInt32(osztas[2]);
-            if (osztando%3==0)
-            {
+                t.Stop();
                 getAnswear(betu);
             }
         }
 
-
-        private void OnTimeEvent2(object sender, System.Timers.ElapsedEventArgs e)
+        private void OnTimeEvent2(object sender, ElapsedEventArgs e)
         {
-            Invoke(new Action(() =>
+            countDown2++;
+            if (countDown2 % 3 == 0)
             {
-                s2 += 1;
-                if (s2 == 60)
-                {
-                    s2 = 0;
-                    m2 += 1;
-                }
-                if (m2 == 60)
-                {
-                    m2 = 0;
-                    h2 += 1;
-                }
-                //ide is jön egy zene
-                ellenor2.Text = string.Format("{0}:{1}:{2}", h2.ToString().PadLeft(2, '0'), m2.ToString().PadLeft(2, '0'), s2.ToString().PadLeft(2, '0'));
-            }));
-            string[] osztas = ellenor2.Text.Split(':');
-            int osztando = Convert.ToInt32(osztas[2]);
-            if (osztando % 3 == 0)
-            {
+                t2.Stop();
                 text();
             }
         }
-
 
         public Game()
         {
             InitializeComponent();
             pTsz.Id++;
+            t.Elapsed += new ElapsedEventHandler(OnTimeEvent);
+            t.Interval = 1000;
+            t2.Elapsed += new ElapsedEventHandler(OnTimeEvent2);
+            t2.Interval = 1000;
         }
 
         public void text()
@@ -103,12 +76,90 @@ namespace Legyen_ön_is_Milliomos
                     forthAnswear.Invoke(new Action(text));
                     return;
                 }
-                N = jk.getSor(szintT, tomb[szintT]);
-                Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
-                firstAnswer.Text = jk.getValaszA(N, szintT);
-                secondAnswear.Text = jk.getValaszB(N, szintT);
-                thirdAnswear.Text = jk.getValaszC(N, szintT);
-                forthAnswear.Text = jk.getValaszD(N, szintT);
+                if (Properties.Settings.Default.mentes)
+                {
+                    try
+                    {
+                        Properties.Settings.Default.mentes = false;
+                        mentettAllas = File.ReadAllLines("save.txt", Encoding.UTF8);
+                        string[] adatok = mentettAllas[0].Split(';');
+                        pTsz.Id = Convert.ToInt32(adatok[2]);
+                        N = Convert.ToInt32(adatok[4]);
+                        szintT = Convert.ToInt32(adatok[3]);
+                        pontszam = Convert.ToInt32(adatok[1]);
+                        Properties.Settings.Default.playerName = adatok[0];
+                        Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
+                        firstAnswer.Text = jk.getValaszA(N, szintT);
+                        secondAnswear.Text = jk.getValaszB(N, szintT);
+                        thirdAnswear.Text = jk.getValaszC(N, szintT);
+                        forthAnswear.Text = jk.getValaszD(N, szintT); 
+                        switch (szintT)
+                        {
+                            case 1: lvl1.BackColor = Color.Orange; break;
+                            case 2:
+                                lvl2.BackColor = Color.Orange;
+                                lvl1.BackColor = Color.Green;  break;
+                            case 3:
+                                lvl3.BackColor = Color.Orange;
+                                lvl2.BackColor = Color.Green;  break;
+                            case 4:
+                                lvl4.BackColor = Color.Orange;
+                                lvl3.BackColor = Color.Green;  break;
+                            case 5:
+                                lvl5.BackColor = Color.Orange;
+                                lvl4.BackColor = Color.Green;  break;
+                            case 6:
+                                lvl6.BackColor = Color.Orange;
+                                lvl5.BackColor = Color.Green; break;
+                            case 7:
+                                lvl7.BackColor = Color.Orange;
+                                lvl6.BackColor = Color.Green;  break;
+                            case 8:
+                                lvl8.BackColor = Color.Orange;
+                                lvl7.BackColor = Color.Green;  break;
+                            case 9:
+                                lvl9.BackColor = Color.Orange;
+                                lvl8.BackColor = Color.Green;  break;
+                            case 10:
+                                lvl10.BackColor = Color.Orange;
+                                lvl9.BackColor = Color.Green;  break;
+                            case 11:
+                                lvl11.BackColor = Color.Orange;
+                                lvl10.BackColor = Color.Green;  break;
+                            case 12:
+                                lvl12.BackColor = Color.Orange;
+                                lvl11.BackColor = Color.Green;  break;
+                            case 13:
+                                lvl13.BackColor = Color.Orange;
+                                lvl12.BackColor = Color.Green;  break;
+                            case 14:
+                                lvl14.BackColor = Color.Orange;
+                                lvl13.BackColor = Color.Green;  break;
+                            case 15:
+                                lvl15.BackColor = Color.Orange;
+                                lvl14.BackColor = Color.Green; break;
+                            case 16:
+                                lvl15.BackColor = Color.Green;  break;
+                        }
+                    }
+                    catch (FileNotFoundException e)
+                    {
+
+                    }
+                }
+                else
+                {
+                    N = jk.getSor(szintT, tomb[szintT]);
+                    Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
+                    firstAnswer.Text = jk.getValaszA(N, szintT);
+                    secondAnswear.Text = jk.getValaszB(N, szintT);
+                    thirdAnswear.Text = jk.getValaszC(N, szintT);
+                    forthAnswear.Text = jk.getValaszD(N, szintT);
+                }
+                if(szintT != 1)
+                {
+                    pontszam++;
+                }
                 firstAnswer.BackColor = Color.Black;
                 secondAnswear.BackColor = Color.Black;
                 thirdAnswear.BackColor = Color.Black;
@@ -123,35 +174,34 @@ namespace Legyen_ön_is_Milliomos
                 {
                     case 1: lvl1.BackColor = Color.Orange; break;
                     case 2: lvl2.BackColor = Color.Orange;
-                            lvl1.BackColor = Color.Green; pontszam++; break;
+                            lvl1.BackColor = Color.Green;  break;
                     case 3: lvl3.BackColor = Color.Orange;
-                            lvl2.BackColor = Color.Green; pontszam++; break;
+                            lvl2.BackColor = Color.Green; break;
                     case 4: lvl4.BackColor = Color.Orange;
-                            lvl3.BackColor = Color.Green; pontszam++; break;
+                            lvl3.BackColor = Color.Green; break;
                     case 5: lvl5.BackColor = Color.Orange;
-                            lvl4.BackColor = Color.Green; pontszam++; break;
+                            lvl4.BackColor = Color.Green;  break;
                     case 6: lvl6.BackColor = Color.Orange;
-                            lvl5.BackColor = Color.Green; pontszam++; break;
+                            lvl5.BackColor = Color.Green;  break;
                     case 7: lvl7.BackColor = Color.Orange;
-                            lvl6.BackColor = Color.Green; pontszam++; break;
+                            lvl6.BackColor = Color.Green;  break;
                     case 8: lvl8.BackColor = Color.Orange;
-                            lvl7.BackColor = Color.Green; pontszam++; break;
+                            lvl7.BackColor = Color.Green;  break;
                     case 9: lvl9.BackColor = Color.Orange;
-                            lvl8.BackColor = Color.Green; pontszam++; break;
+                            lvl8.BackColor = Color.Green;  break;
                     case 10: lvl10.BackColor = Color.Orange;
-                             lvl9.BackColor = Color.Green; pontszam++; break;
+                             lvl9.BackColor = Color.Green;  break;
                     case 11: lvl11.BackColor = Color.Orange;
-                             lvl10.BackColor = Color.Green; pontszam++; break;
+                             lvl10.BackColor = Color.Green;  break;
                     case 12: lvl12.BackColor = Color.Orange;
-                             lvl11.BackColor = Color.Green; pontszam++; break;
+                             lvl11.BackColor = Color.Green; break;
                     case 13: lvl13.BackColor = Color.Orange;
-                             lvl12.BackColor = Color.Green; pontszam++; break;
+                             lvl12.BackColor = Color.Green;  break;
                     case 14: lvl14.BackColor = Color.Orange;
-                             lvl13.BackColor = Color.Green; pontszam++; break;
+                             lvl13.BackColor = Color.Green;  break;
                     case 15: lvl15.BackColor = Color.Orange;
-                             lvl14.BackColor = Color.Green; pontszam++; break;
-                    case 16: lvl15.BackColor = Color.Green; pontszam++;
-                        Properties.Settings.Default.levels = pontszam; break;
+                             lvl14.BackColor = Color.Green;  break;
+                    case 16: lvl15.BackColor = Color.Green; break;
                 }
             }
             catch (Exception ex)
@@ -162,13 +212,14 @@ namespace Legyen_ön_is_Milliomos
 
         public void error()
         {
+            jk.win = "lost";
             string message = "Worng! You lost!";
             string caption = "Game over!";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result;
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 // Closes the parent form.
                 try
@@ -181,6 +232,7 @@ namespace Legyen_ön_is_Milliomos
                         forthAnswear.Invoke(new Action(error));
                         return;
                     }
+                    
                     t.Stop();
                     Application.DoEvents();
                     this.Close();
@@ -196,7 +248,6 @@ namespace Legyen_ön_is_Milliomos
         {           
             if (jk.helyesBetu(N).Equals(betu))
             {
-                t.Stop();
                 t2.Start();
                 szintT++;
                 switch (betu)
@@ -207,32 +258,12 @@ namespace Legyen_ön_is_Milliomos
                     case "D": forthAnswear.BackColor = Color.Green; break;
                 }
                 //ide még egy zene jön
-                t2.Interval = 1000;
-                t2.Elapsed += OnTimeEvent2;
+                //t2.Interval = 1000;
+                //t2.Elapsed += OnTimeEvent2;
             }
             else
             {
                 error();
-            }
-        }
-
-        private void staart()
-        {
-            try
-            {
-                if (firstAnswer.InvokeRequired || secondAnswear.InvokeRequired || thirdAnswear.InvokeRequired || forthAnswear.InvokeRequired)
-                {
-                    firstAnswer.Invoke(new Action(staart));
-                    secondAnswear.Invoke(new Action(staart));
-                    thirdAnswear.Invoke(new Action(staart));
-                    forthAnswear.Invoke(new Action(staart));
-                    return;
-                }
-                t.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -268,8 +299,9 @@ namespace Legyen_ön_is_Milliomos
             {
                 betu = "A";
                 firstAnswer.BackColor = Color.Orange;
-                Thread tt = new Thread(staart);
-                tt.Start();
+                //Thread tt = new Thread(staart);
+                //tt.Start();
+                t.Start();
             }
         }
 
@@ -305,8 +337,9 @@ namespace Legyen_ön_is_Milliomos
             {
                 betu = "B";
                 secondAnswear.BackColor = Color.Orange;
-                Thread tt = new Thread(staart);
-                tt.Start();
+                //Thread tt = new Thread(staart);
+                //tt.Start();
+                t.Start();
             }
         }
 
@@ -317,14 +350,44 @@ namespace Legyen_ön_is_Milliomos
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.ID = pTsz.Id;
-            int ize = Properties.Settings.Default.ID;
-            Properties.Settings.Default.levels = pontszam;
-            Properties.Settings.Default.Save();
-            using (StreamWriter outputFile = File.AppendText("pontszamok.txt"))
+            if (jk.win.Equals("won"))
             {
-                //outputFile.Write(ize + ';');
-                outputFile.WriteLine(Properties.Settings.Default.playerName + ';' + pontszam + ';' + ize);
+                Properties.Settings.Default.ID = pTsz.Id;
+                int ize = Properties.Settings.Default.ID;
+                Properties.Settings.Default.levels = pontszam/4;
+                Properties.Settings.Default.Save();
+                File.WriteAllText("save.txt", "");
+                using (StreamWriter outputFile = File.AppendText("pontszamok.txt"))
+                {
+                    //outputFile.Write(ize + ';');
+                    outputFile.WriteLine(Properties.Settings.Default.playerName + ';' + pontszam/4 + ';' + ize);
+                }
+                jk.win = "";
+            }
+            else if(jk.win.Equals("lost"))
+            {
+                Properties.Settings.Default.ID = pTsz.Id;
+                int ize = Properties.Settings.Default.ID;
+                Properties.Settings.Default.levels = pontszam/4;
+                Properties.Settings.Default.Save();
+                File.WriteAllText("save.txt", "");
+                using (StreamWriter outputFile = File.AppendText("pontszamok.txt"))
+                {
+                    //outputFile.Write(ize + ';');
+                    outputFile.WriteLine(Properties.Settings.Default.playerName + ';' + (pontszam/4) + ';' + ize);
+                }
+                jk.win = "";
+            }
+            else
+            {
+                Properties.Settings.Default.ID = pTsz.Id;
+                int ize = Properties.Settings.Default.ID;
+                Properties.Settings.Default.levels = pontszam/4;
+                Properties.Settings.Default.Save();
+                using (StreamWriter outputFile = new StreamWriter("save.txt"))
+                {
+                    outputFile.WriteLine(Properties.Settings.Default.playerName + ';' + (pontszam/4) + ';' + ize + ';' + Convert.ToString(szintT) + ';' + Convert.ToString(N));
+                }
             }
         }
 
@@ -360,8 +423,9 @@ namespace Legyen_ön_is_Milliomos
             {
                 betu = "C";
                 thirdAnswear.BackColor = Color.Orange;
-                Thread tt = new Thread(staart);
-                tt.Start();
+                //Thread tt = new Thread(staart);
+                //tt.Start();
+                t.Start();
             }
             
         }
@@ -398,17 +462,16 @@ namespace Legyen_ön_is_Milliomos
             {
                 betu = "D";
                 forthAnswear.BackColor = Color.Orange;
-                Thread tt = new Thread(staart);
-                tt.Start();
+                //Thread tt = new Thread(staart);
+                //tt.Start();
+                t.Start();
             }
             
         }
 
         private void Game_Load_1(object sender, EventArgs e)
         {
-            t.Interval = 1000;
-            t.Elapsed += OnTimeEvent;
-            for (int i = 0; i < 5000; i++)
+            for (int i = 0; i < jk.kerdesek.Length - 1; i++)
             {
                 tomb[i] = r.Next(0, 4999);
             }
@@ -445,15 +508,13 @@ namespace Legyen_ön_is_Milliomos
 
         private void btnExitGame_Click(object sender, EventArgs e)
         {
-            t.Stop();
-            Application.DoEvents();
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
      
         private void felezo_Click_1(object sender, EventArgs e)
         {
             string helyesvalasz = jk.helyesBetu(N);
-            label1.Text = helyesvalasz;
             int HV = 0;
             switch (helyesvalasz)
             {
@@ -468,7 +529,6 @@ namespace Legyen_ön_is_Milliomos
                 rand = r.Next(0, 4);
                 rand2 = r.Next(0, 4);
             } while (rand == rand2 || rand == HV || rand2 == HV);
-            label2.Text = HV + " " + rand + " " + rand2;
             switch (rand)
             {
                 case 0: firstAnswer.Visible = false; break;

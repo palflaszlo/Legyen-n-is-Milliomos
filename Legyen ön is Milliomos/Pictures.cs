@@ -14,8 +14,8 @@ namespace Legyen_ön_is_Milliomos
     public partial class Pictures : Form
     {
         public bool dontRunHandler;
-        public System.Timers.Timer myTimer = new System.Timers.Timer();
-        public System.Timers.Timer myTimer2 = new System.Timers.Timer();
+        System.Timers.Timer myTimer = new System.Timers.Timer();
+        System.Timers.Timer myTimer2 = new System.Timers.Timer();
         public int countDown = 0;
         public int countDown2 = 0;
 
@@ -208,7 +208,7 @@ namespace Legyen_ön_is_Milliomos
             DialogResult result;
             // Displays the MessageBox.
             result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 // Closes the parent form.
                 try

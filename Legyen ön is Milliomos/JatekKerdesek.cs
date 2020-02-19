@@ -25,6 +25,8 @@ namespace Legyen_ön_is_Milliomos
         Profile pf = new Profile();
         public string[] themakk = new string[500];
 
+        public string win = "";
+
         public JatekKerdesek()
         {
             for (int i = 0; i < osszSor.Length; i++)
@@ -108,6 +110,7 @@ namespace Legyen_ön_is_Milliomos
             }
             else
             {
+                win = "won";
                 string message = "You won the whole game!";
                 string caption = "You are a millionare!";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;

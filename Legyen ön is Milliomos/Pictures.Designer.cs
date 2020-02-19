@@ -60,6 +60,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Location = new System.Drawing.Point(233, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(255, 223);
@@ -79,6 +80,7 @@
             // 
             // picQu
             // 
+            this.picQu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.picQu.BackColor = System.Drawing.Color.Black;
             this.picQu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.picQu.ForeColor = System.Drawing.Color.White;
@@ -90,6 +92,7 @@
             // 
             // valaszA
             // 
+            this.valaszA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.valaszA.BackColor = System.Drawing.Color.Black;
             this.valaszA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.valaszA.ForeColor = System.Drawing.Color.White;
@@ -102,6 +105,7 @@
             // 
             // valaszB
             // 
+            this.valaszB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.valaszB.BackColor = System.Drawing.Color.Black;
             this.valaszB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.valaszB.ForeColor = System.Drawing.Color.White;
@@ -114,6 +118,7 @@
             // 
             // valaszC
             // 
+            this.valaszC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.valaszC.BackColor = System.Drawing.Color.Black;
             this.valaszC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.valaszC.ForeColor = System.Drawing.Color.White;
@@ -126,6 +131,7 @@
             // 
             // valaszD
             // 
+            this.valaszD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.valaszD.BackColor = System.Drawing.Color.Black;
             this.valaszD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.valaszD.ForeColor = System.Drawing.Color.White;
@@ -148,6 +154,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.Location = new System.Drawing.Point(746, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(43, 23);
@@ -157,6 +164,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(697, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(43, 23);
@@ -166,6 +174,7 @@
             // 
             // felezo
             // 
+            this.felezo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.felezo.Location = new System.Drawing.Point(638, 12);
             this.felezo.Name = "felezo";
             this.felezo.Size = new System.Drawing.Size(54, 23);
@@ -176,6 +185,7 @@
             // 
             // lvl15
             // 
+            this.lvl15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl15.AutoSize = true;
             this.lvl15.BackColor = System.Drawing.Color.Transparent;
             this.lvl15.ForeColor = System.Drawing.Color.White;
@@ -187,6 +197,7 @@
             // 
             // lvl14
             // 
+            this.lvl14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl14.AutoSize = true;
             this.lvl14.BackColor = System.Drawing.Color.Transparent;
             this.lvl14.ForeColor = System.Drawing.Color.White;
@@ -198,6 +209,7 @@
             // 
             // lvl13
             // 
+            this.lvl13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl13.AutoSize = true;
             this.lvl13.BackColor = System.Drawing.Color.Transparent;
             this.lvl13.ForeColor = System.Drawing.Color.White;
@@ -209,6 +221,7 @@
             // 
             // lvl10
             // 
+            this.lvl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl10.AutoSize = true;
             this.lvl10.BackColor = System.Drawing.Color.Transparent;
             this.lvl10.ForeColor = System.Drawing.Color.White;
@@ -220,6 +233,7 @@
             // 
             // lvl11
             // 
+            this.lvl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl11.AutoSize = true;
             this.lvl11.BackColor = System.Drawing.Color.Transparent;
             this.lvl11.ForeColor = System.Drawing.Color.White;
@@ -231,6 +245,7 @@
             // 
             // lvl1
             // 
+            this.lvl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl1.AutoSize = true;
             this.lvl1.BackColor = System.Drawing.Color.Transparent;
             this.lvl1.ForeColor = System.Drawing.Color.White;
@@ -242,6 +257,7 @@
             // 
             // lvl2
             // 
+            this.lvl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl2.AutoSize = true;
             this.lvl2.BackColor = System.Drawing.Color.Transparent;
             this.lvl2.ForeColor = System.Drawing.Color.White;
@@ -253,6 +269,7 @@
             // 
             // lvl3
             // 
+            this.lvl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl3.AutoSize = true;
             this.lvl3.BackColor = System.Drawing.Color.Transparent;
             this.lvl3.ForeColor = System.Drawing.Color.White;
@@ -264,6 +281,7 @@
             // 
             // lvl4
             // 
+            this.lvl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl4.AutoSize = true;
             this.lvl4.BackColor = System.Drawing.Color.Transparent;
             this.lvl4.ForeColor = System.Drawing.Color.White;
@@ -275,6 +293,7 @@
             // 
             // lvl5
             // 
+            this.lvl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl5.AutoSize = true;
             this.lvl5.BackColor = System.Drawing.Color.Transparent;
             this.lvl5.ForeColor = System.Drawing.Color.White;
@@ -286,6 +305,7 @@
             // 
             // lvl6
             // 
+            this.lvl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl6.AutoSize = true;
             this.lvl6.BackColor = System.Drawing.Color.Transparent;
             this.lvl6.ForeColor = System.Drawing.Color.White;
@@ -297,6 +317,7 @@
             // 
             // lvl7
             // 
+            this.lvl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl7.AutoSize = true;
             this.lvl7.BackColor = System.Drawing.Color.Transparent;
             this.lvl7.ForeColor = System.Drawing.Color.White;
@@ -308,6 +329,7 @@
             // 
             // lvl8
             // 
+            this.lvl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl8.AutoSize = true;
             this.lvl8.BackColor = System.Drawing.Color.Transparent;
             this.lvl8.ForeColor = System.Drawing.Color.White;
@@ -319,6 +341,7 @@
             // 
             // lvl9
             // 
+            this.lvl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl9.AutoSize = true;
             this.lvl9.BackColor = System.Drawing.Color.Transparent;
             this.lvl9.ForeColor = System.Drawing.Color.White;
@@ -330,6 +353,7 @@
             // 
             // lvl12
             // 
+            this.lvl12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lvl12.AutoSize = true;
             this.lvl12.BackColor = System.Drawing.Color.Transparent;
             this.lvl12.ForeColor = System.Drawing.Color.White;

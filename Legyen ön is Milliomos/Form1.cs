@@ -16,7 +16,7 @@ namespace Legyen_ön_is_Milliomos
         {
             InitializeComponent();
         }
-
+        public bool btnLoadSave = false;
         private void btnProfile_Click(object sender, EventArgs e)
         {
             Profile profil = new Profile();
@@ -27,7 +27,13 @@ namespace Legyen_ön_is_Milliomos
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            btnLoadSave = true;
+            Properties.Settings.Default.mentes = true;
+            Properties.Settings.Default.Save();
+            Game GameForm = new Game();
+            this.Hide();
+            GameForm.ShowDialog();
+            this.Show();
         }
 
         private void btmStart_Click(object sender, EventArgs e)

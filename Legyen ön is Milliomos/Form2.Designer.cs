@@ -38,7 +38,8 @@
             // 
             // szoveges
             // 
-            this.szoveges.Location = new System.Drawing.Point(12, 246);
+            this.szoveges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.szoveges.Location = new System.Drawing.Point(12, 264);
             this.szoveges.Name = "szoveges";
             this.szoveges.Size = new System.Drawing.Size(125, 30);
             this.szoveges.TabIndex = 0;
@@ -48,7 +49,8 @@
             // 
             // kepes
             // 
-            this.kepes.Location = new System.Drawing.Point(12, 282);
+            this.kepes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.kepes.Location = new System.Drawing.Point(12, 300);
             this.kepes.Name = "kepes";
             this.kepes.Size = new System.Drawing.Size(125, 30);
             this.kepes.TabIndex = 1;
@@ -58,7 +60,8 @@
             // 
             // zenes
             // 
-            this.zenes.Location = new System.Drawing.Point(12, 318);
+            this.zenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.zenes.Location = new System.Drawing.Point(12, 336);
             this.zenes.Name = "zenes";
             this.zenes.Size = new System.Drawing.Size(125, 30);
             this.zenes.TabIndex = 2;
@@ -68,7 +71,8 @@
             // 
             // segitE
             // 
-            this.segitE.Location = new System.Drawing.Point(12, 354);
+            this.segitE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.segitE.Location = new System.Drawing.Point(12, 372);
             this.segitE.Name = "segitE";
             this.segitE.Size = new System.Drawing.Size(125, 30);
             this.segitE.TabIndex = 3;
@@ -78,7 +82,8 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 390);
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.Location = new System.Drawing.Point(12, 408);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(125, 30);
             this.btnBack.TabIndex = 4;
