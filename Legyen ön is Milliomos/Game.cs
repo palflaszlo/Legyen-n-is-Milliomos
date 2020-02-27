@@ -88,11 +88,11 @@ namespace Legyen_ön_is_Milliomos
                         szintT = Convert.ToInt32(adatok[3]);
                         pontszam = Convert.ToInt32(adatok[1]);
                         Properties.Settings.Default.playerName = adatok[0];
-                        Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
-                        firstAnswer.Text = jk.getValaszA(N, szintT);
-                        secondAnswear.Text = jk.getValaszB(N, szintT);
-                        thirdAnswear.Text = jk.getValaszC(N, szintT);
-                        forthAnswear.Text = jk.getValaszD(N, szintT); 
+                        Question.Text = szintT + ".  " + jk.getKerdes(N);
+                        firstAnswer.Text = jk.getValaszA(N);
+                        secondAnswear.Text = jk.getValaszB(N);
+                        thirdAnswear.Text = jk.getValaszC(N);
+                        forthAnswear.Text = jk.getValaszD(N); 
                         switch (szintT)
                         {
                             case 1: lvl1.BackColor = Color.Orange; break;
@@ -150,11 +150,11 @@ namespace Legyen_ön_is_Milliomos
                 else
                 {
                     N = jk.getSor(szintT, tomb[szintT]);
-                    Question.Text = szintT + ".  " + jk.getKerdes(N, szintT);
-                    firstAnswer.Text = jk.getValaszA(N, szintT);
-                    secondAnswear.Text = jk.getValaszB(N, szintT);
-                    thirdAnswear.Text = jk.getValaszC(N, szintT);
-                    forthAnswear.Text = jk.getValaszD(N, szintT);
+                    Question.Text = szintT + ".  " + jk.getKerdes(N);
+                    firstAnswer.Text = jk.getValaszA(N);
+                    secondAnswear.Text = jk.getValaszB(N);
+                    thirdAnswear.Text = jk.getValaszC(N);
+                    forthAnswear.Text = jk.getValaszD(N);
                 }
                 if(szintT != 1)
                 {
@@ -471,7 +471,7 @@ namespace Legyen_ön_is_Milliomos
 
         private void Game_Load_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < jk.kerdesek.Length - 1; i++)
+            for (int i = 0; i < jk.questions.Count - 1; i++)
             {
                 tomb[i] = r.Next(0, 4999);
             }

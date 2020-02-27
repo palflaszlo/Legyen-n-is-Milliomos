@@ -87,11 +87,11 @@ namespace Legyen_ön_is_Milliomos
                     return;
                 }
                 N = jk.getSor(szintT, tomb[szintT]);
-                picQu.Text = szintT + ".  " + jk.getKerdes(N, szintT);
-                valaszA.Text = jk.getValaszA(N, szintT);
-                valaszB.Text = jk.getValaszB(N, szintT);
-                valaszC.Text = jk.getValaszC(N, szintT);
-                valaszD.Text = jk.getValaszD(N, szintT);
+                picQu.Text = szintT + ".  " + jk.getKerdes(N);
+                valaszA.Text = jk.getValaszA(N);
+                valaszB.Text = jk.getValaszB(N);
+                valaszC.Text = jk.getValaszC(N);
+                valaszD.Text = jk.getValaszD(N);
 
                 valaszA.BackColor = Color.Black;
                 valaszB.BackColor = Color.Black;
@@ -215,7 +215,7 @@ namespace Legyen_ön_is_Milliomos
 
         private void Zenefelismero_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < jk.kerdesek.Length - 1; i++)
+            for (int i = 0; i < jk.questions.Count - 1; i++)
             {
                 tomb[i] = r.Next(0, 4999);
             }
