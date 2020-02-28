@@ -245,7 +245,8 @@ namespace Legyen_ön_is_Milliomos
         }
 
         private void getAnswear(string betu)
-        {           
+        {
+            string helyes = jk.helyesBetu(N);
             if (jk.helyesBetu(N).Equals(betu))
             {
                 t2.Start();
@@ -263,6 +264,13 @@ namespace Legyen_ön_is_Milliomos
             }
             else
             {
+                switch (helyes)
+                {
+                    case "A": firstAnswer.BackColor = Color.Green; break;
+                    case "B": secondAnswear.BackColor = Color.Green; break;
+                    case "C": thirdAnswear.BackColor = Color.Green; break;
+                    case "D": forthAnswear.BackColor = Color.Green; break;
+                }
                 error();
             }
         }
