@@ -61,12 +61,12 @@
             this.Question.AllowDrop = true;
             this.Question.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Question.AutoEllipsis = true;
-            this.Question.BackColor = System.Drawing.Color.Black;
-            this.Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Question.BackColor = System.Drawing.Color.Transparent;
+            this.Question.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Question.ForeColor = System.Drawing.Color.White;
-            this.Question.Location = new System.Drawing.Point(12, 285);
+            this.Question.Location = new System.Drawing.Point(83, 309);
             this.Question.Name = "Question";
-            this.Question.Size = new System.Drawing.Size(667, 108);
+            this.Question.Size = new System.Drawing.Size(376, 52);
             this.Question.TabIndex = 1;
             this.Question.Text = "Ide jön  a kérdés";
             this.Question.UseCompatibleTextRendering = true;
@@ -75,12 +75,12 @@
             // 
             this.firstAnswer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.firstAnswer.AutoEllipsis = true;
-            this.firstAnswer.BackColor = System.Drawing.Color.Black;
-            this.firstAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.firstAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.firstAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.firstAnswer.ForeColor = System.Drawing.Color.White;
-            this.firstAnswer.Location = new System.Drawing.Point(12, 394);
+            this.firstAnswer.Location = new System.Drawing.Point(31, 388);
             this.firstAnswer.Name = "firstAnswer";
-            this.firstAnswer.Size = new System.Drawing.Size(311, 65);
+            this.firstAnswer.Size = new System.Drawing.Size(182, 57);
             this.firstAnswer.TabIndex = 2;
             this.firstAnswer.Text = "Első válasz";
             this.firstAnswer.Click += new System.EventHandler(this.firstAnswer_Click);
@@ -89,12 +89,12 @@
             // 
             this.thirdAnswear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.thirdAnswear.AutoEllipsis = true;
-            this.thirdAnswear.BackColor = System.Drawing.Color.Black;
-            this.thirdAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.thirdAnswear.BackColor = System.Drawing.Color.Transparent;
+            this.thirdAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.thirdAnswear.ForeColor = System.Drawing.Color.White;
-            this.thirdAnswear.Location = new System.Drawing.Point(12, 466);
+            this.thirdAnswear.Location = new System.Drawing.Point(47, 470);
             this.thirdAnswear.Name = "thirdAnswear";
-            this.thirdAnswear.Size = new System.Drawing.Size(311, 59);
+            this.thirdAnswear.Size = new System.Drawing.Size(166, 55);
             this.thirdAnswear.TabIndex = 3;
             this.thirdAnswear.Text = "Harmadik válasz";
             this.thirdAnswear.Click += new System.EventHandler(this.thirdAnswear_Click);
@@ -103,12 +103,12 @@
             // 
             this.secondAnswear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.secondAnswear.AutoEllipsis = true;
-            this.secondAnswear.BackColor = System.Drawing.Color.Black;
-            this.secondAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.secondAnswear.BackColor = System.Drawing.Color.Transparent;
+            this.secondAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.secondAnswear.ForeColor = System.Drawing.Color.White;
-            this.secondAnswear.Location = new System.Drawing.Point(349, 394);
+            this.secondAnswear.Location = new System.Drawing.Point(304, 380);
             this.secondAnswear.Name = "secondAnswear";
-            this.secondAnswear.Size = new System.Drawing.Size(330, 65);
+            this.secondAnswear.Size = new System.Drawing.Size(186, 65);
             this.secondAnswear.TabIndex = 4;
             this.secondAnswear.Text = "Második válasz";
             this.secondAnswear.Click += new System.EventHandler(this.secondAnswear_Click);
@@ -117,12 +117,12 @@
             // 
             this.forthAnswear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.forthAnswear.AutoEllipsis = true;
-            this.forthAnswear.BackColor = System.Drawing.Color.Black;
-            this.forthAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.forthAnswear.BackColor = System.Drawing.Color.Transparent;
+            this.forthAnswear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.forthAnswear.ForeColor = System.Drawing.Color.White;
-            this.forthAnswear.Location = new System.Drawing.Point(349, 466);
+            this.forthAnswear.Location = new System.Drawing.Point(304, 470);
             this.forthAnswear.Name = "forthAnswear";
-            this.forthAnswear.Size = new System.Drawing.Size(330, 59);
+            this.forthAnswear.Size = new System.Drawing.Size(196, 45);
             this.forthAnswear.TabIndex = 5;
             this.forthAnswear.Text = "Negyedik válasz";
             this.forthAnswear.Click += new System.EventHandler(this.forthAnswear_Click);
