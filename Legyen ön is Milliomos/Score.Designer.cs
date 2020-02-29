@@ -30,35 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pontszam));
             this.listScore = new System.Windows.Forms.ListView();
-            this.lvlID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvpontod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listScore
             // 
             this.listScore.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listScore.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lvlID,
             this.lvname,
             this.lvpontod});
             this.listScore.FullRowSelect = true;
             this.listScore.GridLines = true;
-            this.listScore.Location = new System.Drawing.Point(282, 12);
+            this.listScore.Location = new System.Drawing.Point(414, 12);
             this.listScore.Name = "listScore";
-            this.listScore.Size = new System.Drawing.Size(307, 416);
+            this.listScore.Size = new System.Drawing.Size(250, 416);
             this.listScore.TabIndex = 0;
             this.listScore.UseCompatibleStateImageBehavior = false;
             this.listScore.View = System.Windows.Forms.View.Details;
-            this.listScore.SelectedIndexChanged += new System.EventHandler(this.listScore_SelectedIndexChanged);
-            // 
-            // lvlID
-            // 
-            this.lvlID.Text = "I.D.";
             // 
             // lvname
             // 
@@ -106,9 +101,29 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 13);
+            this.label3.Size = new System.Drawing.Size(286, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "A pontszámod a megválaszolt kérdéseid alapján jön ki.";
+            this.label3.Text = "A pontszámod egyenlő a megválaszolt kérdéseid számával.";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(12, 120);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Törlés";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(395, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ha már egy rekord nem kell, ki is törölheted, ha kijelölve a törlés gombra kattin" +
+    "tasz.";
             // 
             // pontszam
             // 
@@ -117,6 +132,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -125,6 +142,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "pontszam";
             this.Text = "Score";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pontszam_FormClosing);
             this.Load += new System.EventHandler(this.pontszam_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -140,6 +158,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ColumnHeader lvname;
         private System.Windows.Forms.ColumnHeader lvpontod;
-        private System.Windows.Forms.ColumnHeader lvlID;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label4;
     }
 }

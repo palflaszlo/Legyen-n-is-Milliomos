@@ -10,13 +10,12 @@ namespace Legyen_ön_is_Milliomos
     {
         public string YourName { get; set; }
         public int Highscore { get; set; }
-        public int Id { get; set; }
 
         public Pontszam() { }
 
         public override string ToString()
         {
-            var details = string.Format("{0} {1} {2}", Id, YourName, Highscore);
+            var details = string.Format("{0} {1}", YourName, Highscore);
             return details;
         }
     }

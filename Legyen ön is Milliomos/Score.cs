@@ -28,7 +28,6 @@ namespace Legyen_ön_is_Milliomos
                 string[] adatok = osszSor[i].Split(';');
                 pontszamook[i] = Convert.ToInt32(adatok[1]);
                 nevek[i] = adatok[0];
-                idk[i] = Convert.ToInt32(adatok[2]);
             }
         }
 
@@ -37,7 +36,7 @@ namespace Legyen_ön_is_Milliomos
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
+        /*
         private void listScore_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedItem = (Pontszam)listScore.SelectedItems[0].Tag;
@@ -45,7 +44,7 @@ namespace Legyen_ön_is_Milliomos
             {
                 MessageBox.Show(selectedItem.ToString(), "Personal details", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+        }*/
 
         private List<Pontszam> GetPontszamList()
         {
@@ -54,7 +53,6 @@ namespace Legyen_ön_is_Milliomos
             {
                 list.Add(new Pontszam()
                 {
-                    Id = idk[i], 
                     YourName = nevek[i], 
                     Highscore = pontszamook[i]
                 });
@@ -67,10 +65,34 @@ namespace Legyen_ön_is_Milliomos
             var pontSZ = GetPontszamList();
             foreach (var person in pontSZ)
             {
-                var row = new string[] { Convert.ToString(person.Id), person.YourName, Convert.ToString(person.Highscore) };
+                var row = new string[] { person.YourName, Convert.ToString(person.Highscore) };
                 var lvi = new ListViewItem(row);
                 listScore.Items.Add(lvi);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listScore.SelectedItems != null)
+            {
+                for (int i = listScore.SelectedItems.Count - 1; i >= 0; i--)
+                {
+                    ListViewItem itm = listScore.SelectedItems[i];
+                    listScore.Items[itm.Index].Remove();
+                }
+            }
+        }
+
+        private void pontszam_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StreamWriter outputFile = new StreamWriter("pontszamok.txt");
+            var pontSZ = GetPontszamList();
+            foreach (var person in pontSZ)
+            {
+                var row = new string[] { person.YourName, Convert.ToString(person.Highscore) };
+                outputFile.WriteLine(row[0] + ";" + row[1]); 
+            }
+            outputFile.Close();
         }
     }
 }
